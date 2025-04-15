@@ -3759,8 +3759,8 @@ html:not([data-theme="dark"]) .header__icon--theme .theme-icon--moon {
 
 /* MFGnerd Header Adjustments */
 
-/* Reset margin for H1 logo on homepage to fix alignment */
-h1.header__heading {
+/* Reset margin for H1 logo specifically on homepage to fix alignment */
+.template-index h1.header__heading {
   margin: 0;
 }
 
@@ -3805,4 +3805,33 @@ html[data-theme="dark"] .header.page-width {
 .header__icon--theme .svg-wrapper {
   width: 24px; /* Reduce size */
   height: 24px; /* Reduce size */
+}
+
+/* MFGnerd Header Icon Hover Color */
+
+/* General rule for direct children links (Account, Cart) */
+.header__icons > a.header__icon:hover {
+  color: rgb(var(--mfg-color-accent));
+}
+
+/* Specific rule for Search icon (target the summary element) */
+.header__icons details-modal > details > summary.header__icon:hover {
+  color: rgb(var(--mfg-color-accent));
+}
+
+/* Specific rule for Theme Toggle button */
+.header__icons button.header__icon--theme:hover {
+  color: rgb(var(--mfg-color-accent));
+}
+
+/* Ensure SVGs within hovered icons inherit the accent color */
+.header__icons > a.header__icon:hover .icon,
+.header__icons details-modal > details > summary.header__icon:hover .icon,
+.header__icons button.header__icon--theme:hover .icon {
+  fill: currentColor; /* SVGs should inherit the color set on the parent */
+}
+
+/* Explicitly set fill for theme toggle SVGs on hover */
+.header__icons button.header__icon--theme:hover .svg-wrapper svg {
+   fill: currentColor;
 }
