@@ -1,3 +1,51 @@
+/* MFGnerd Custom Theme Variables */
+html[data-theme="light"] {
+  --mfg-color-fill: 251, 254, 251;
+  --mfg-color-text-base: 40, 39, 40;
+  --mfg-color-accent: 0, 108, 172;
+  --mfg-color-card: 230, 230, 230;
+  --mfg-color-card-muted: 205, 205, 205;
+  --mfg-color-border: 236, 233, 233;
+
+  /* Map MFGnerd vars to Shopify vars for light theme */
+  --color-background: var(--mfg-color-fill);
+  --color-foreground: var(--mfg-color-text-base);
+  --color-button: var(--mfg-color-accent); /* Primary button background */
+  --color-button-text: var(--mfg-color-fill); /* Text on primary button */
+  --color-secondary-button: var(--mfg-color-fill); /* Secondary button background (often transparent/bordered) */
+  --color-secondary-button-text: var(--mfg-color-accent); /* Text/border on secondary button */
+  --color-link: var(--mfg-color-accent); /* Link color */
+  --color-badge-background: var(--mfg-color-card);
+  --color-badge-foreground: var(--mfg-color-text-base);
+  --color-badge-border: var(--mfg-color-border);
+  --color-shadow: var(--mfg-color-text-base); /* Adjust shadow color if needed */
+  /* TODO: Map other relevant Shopify vars (--color-background-contrast, etc.) if needed */
+}
+
+html[data-theme="dark"] {
+  --mfg-color-fill: 33, 39, 55;
+  --mfg-color-text-base: 234, 237, 243;
+  --mfg-color-accent: 255, 107, 1;
+  --mfg-color-card: 52, 63, 96;
+  --mfg-color-card-muted: 138, 51, 2;
+  --mfg-color-border: 171, 75, 8;
+
+  /* Map MFGnerd vars to Shopify vars for dark theme */
+  --color-background: var(--mfg-color-fill);
+  --color-foreground: var(--mfg-color-text-base);
+  --color-button: var(--mfg-color-accent); /* Primary button background */
+  --color-button-text: var(--mfg-color-fill); /* Text on primary button (might need adjustment for orange) */
+  --color-secondary-button: var(--mfg-color-fill); /* Secondary button background */
+  --color-secondary-button-text: var(--mfg-color-accent); /* Text/border on secondary button */
+  --color-link: var(--mfg-color-accent); /* Link color */
+  --color-badge-background: var(--mfg-color-card);
+  --color-badge-foreground: var(--mfg-color-text-base);
+  --color-badge-border: var(--mfg-color-border);
+  --color-shadow: var(--mfg-color-text-base); /* Adjust shadow color if needed */
+  /* TODO: Map other relevant Shopify vars (--color-background-contrast, etc.) if needed */
+}
+/* End MFGnerd Custom Theme Variables */
+
 :root {
   --alpha-button-background: 1;
   --alpha-button-border: 1;
@@ -3594,4 +3642,27 @@ details-disclosure > details {
   100% {
     transform: translateX(100%) scaleX(0);
   }
+}
+
+/* MFGnerd Theme Toggle Button Styles */
+.header__icon--theme .theme-icon--sun,
+html[data-theme="dark"] .header__icon--theme .theme-icon--moon {
+  display: none;
+}
+
+html[data-theme="dark"] .header__icon--theme .theme-icon--sun {
+  display: block;
+}
+
+html:not([data-theme="dark"]) .header__icon--theme .theme-icon--moon {
+  display: block;
+}
+
+.header__icon--theme svg {
+  fill: rgb(var(--color-foreground)); /* Use theme's foreground color */
+}
+
+.header__icon--theme:hover svg {
+   /* Consider adding a hover effect if desired, e.g., using the accent color */
+   /* fill: rgb(var(--mfg-color-accent)); */
 }
