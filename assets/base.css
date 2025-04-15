@@ -5,7 +5,6 @@ html[data-theme="light"] {
   --mfg-color-accent: 0, 108, 172;
   --mfg-color-card: 230, 230, 230;
   --mfg-color-card-muted: 205, 205, 205;
-  --mfg-color-card-muted: 205, 205, 205;
   --mfg-color-border: 236, 233, 233;
 
   /* Map MFGnerd vars to Shopify vars for light theme */
@@ -2857,7 +2856,7 @@ details[open] > .header__submenu {
 
 /* MFGnerd: Prevent nav items from wrapping */
 .header__inline-menu .list-menu--inline {
-  display: flex; /* Ensure block-level flex container */
+  /* display: flex; <- Removed */
   flex-wrap: nowrap;
   /* justify-content: flex-end; <- Removed for now */
 }
@@ -3747,6 +3746,13 @@ html[data-theme="dark"] .header.page-width {
 .header__menu-item {
   font-size: 1.5rem; /* Match base body font size */
 }
+
+/* Ensure nav items display inline */
+.header__inline-menu .list-menu--inline > .list-menu__item {
+  display: inline-block; /* Force items inline */
+  padding-left: 1rem; /* Add some spacing */
+  padding-right: 1rem;
+}
 /* End MFGnerd Header Adjustments */
 
 /* MFGnerd Blog Link Style */
@@ -3763,33 +3769,3 @@ html[data-theme="dark"] .header.page-width {
   text-decoration: underline;
   text-underline-offset: 0.3rem;
 }
-
-</file_content>
-
-Now that you have the latest state of the file, try the operation again with fewer, more precise SEARCH blocks. For large files especially, it may be prudent to try to limit yourself to <5 SEARCH/REPLACE blocks at a time, then wait for the user to respond with the result of the operation before following up with another replace_in_file call to make additional edits.
-(If you run into this error 3 times in a row, you may use the write_to_file tool as a fallback.)
-</error><environment_details>
-# VSCode Visible Files
-assets/base.css
-
-# VSCode Open Tabs
-memory-bank/projectbrief.md
-memory-bank/productContext.md
-memory-bank/systemPatterns.md
-memory-bank/techContext.md
-assets/theme-toggle.js
-memory-bank/activeContext.md
-sections/header.liquid
-layout/theme.liquid
-assets/base.css
-memory-bank/progress.md
-
-# Current Time
-4/15/2025, 5:52:20 AM (UTC, UTC+0:00)
-
-# Context Window Usage
-938,151 / 1,048.576K tokens used (89%)
-
-# Current Mode
-ACT MODE
-</environment_details>
