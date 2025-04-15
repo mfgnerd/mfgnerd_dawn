@@ -26,8 +26,9 @@
     *   **[X] Adjust Theme Toggle Size:** Reduced size of `.header__icon--theme .svg-wrapper` to `24px` in `assets/base.css`. *(Needs verification)*
     *   **[X] Adjust Header Font Weight:** Set `font-weight: 600` for logo and nav links in `assets/base.css`. *(Fixed, needs verification)*
     *   **[X] Change Header Font Color:** Set color to `rgb(var(--color-foreground))` for logo and nav links in `assets/base.css`. *(Fixed, needs verification)*
-    *   **[X] Change Active Nav Style:** Set to wavy underline with accent color for `.header__active-menu-item` in `assets/base.css`. *(Fixed, needs verification)*
-    *   **[X] Change Nav Hover Style:** Removed underline, set color to accent for `.header__menu-item:hover` in `assets/base.css`. *(Fixed, needs verification)*
+    *   **[X] Change Active Nav Style:** Set to thicker, more offset wavy underline (default text color, accent on hover). Removed dark-mode specific color rule. *(Fixed, needs verification)*
+    *   **[X] Change Nav Hover Style:** Removed underline, set color to accent for `.header__menu-item:hover`. Active squiggle persists on hover. Removed redundant hover rule. *(Fixed, needs verification)*
+    *   **[X] Increase Header Font Size:** Increased size for logo (`2.4rem`) and nav items (`1.7rem`) in `assets/base.css`. *(Fixed, needs verification)*
     *   **[X] Remove Custom Blog Link:** Removed HTML from `sections/header.liquid` and CSS from `assets/base.css`. *(Done)*
     *   **[ ] Verify Header Width/Border:** Confirm alignment matches page content after navigation fix.
     *   **[X] Adjust header width/padding:** Fixed `max-width` removed, should use `--page-width`. *(Marking as potentially done, needs verification)*.
@@ -61,8 +62,9 @@
 *   **Header Width/Border Alignment:** May still not perfectly align with page content. *(Needs verification)*
 *   **Global Color Application:** Theme toggle doesn't apply colors globally due to Shopify color scheme overrides.
 *   **Header Font Color:** Was grey, changed to base foreground. *(Fixed, needs verification)*
-*   **Active Nav Style:** Was solid underline, changed to wavy accent color. *(Fixed, needs verification)*
-*   **Nav Hover Style:** Was underline, changed to accent color. *(Fixed, needs verification)*
+*   **Active Nav Style:** Was solid underline, changed to thicker/offset wavy (default text color, accent on hover). Removed dark-mode specific color rule. *(Fixed, needs verification)*
+*   **Nav Hover Style:** Was underline, changed to accent color. Active squiggle persists. Removed redundant hover rule. *(Fixed, needs verification)*
+*   **Header Font Size:** Increased. *(Fixed, needs verification)*
 *   **Nav Text Size:** Inconsistent with Astro site (partially addressed by font-weight change).
 *   **Dark Mode Text Color (Other Elements):** Added rule for `.form__label`. *(Fixed, needs verification)*
 *   **Dark Mode Icon Color:** Added rules for common icons. Added rule for newsletter arrow button color. *(Fixed, needs verification)*
@@ -86,5 +88,6 @@
 *   **Decision:** Set `font-weight: 600` for `.header__heading-link`, `.header__menu-item` in `assets/base.css`.
 *   **Decision:** Remove custom Blog link HTML and CSS.
 *   **Decision:** Change header link colors to `rgb(var(--color-foreground))`.
-*   **Decision:** Change active nav link style to wavy underline with accent color.
-*   **Decision:** Remove underline and set hover color to accent for `.header__menu-item:hover`.
+*   **Decision:** Change active nav link style to thicker/offset wavy underline (default text color, accent on hover). Remove dark-mode specific color rule.
+*   **Decision:** Remove underline and set hover color to accent for `.header__menu-item:hover`. Ensure active squiggle persists on hover by removing redundant hover rule.
+*   **Decision:** Increase header font sizes.
