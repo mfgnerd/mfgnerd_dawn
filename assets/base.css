@@ -71,9 +71,33 @@ html[data-theme="dark"] {
   p,
   .rte, /* Target the container */
   .rte p, /* Target paragraphs within RTE */
-  .product__description /* Target product description container */
+  .product__description, /* Target product description container */
+  .form__label /* Target form labels like Quantity, Variants */
    {
     color: rgb(var(--mfg-color-text-base)) !important;
+  }
+
+  /* Force correct icon colors for dark mode */
+  .select .icon-caret, /* Dropdown arrows */
+  .quantity__button .icon /* Quantity +/- icons */
+  {
+     fill: rgb(var(--mfg-color-text-base)) !important;
+  }
+
+  /* Ensure other potential icons also inherit color */
+  summary .icon-caret,
+  .disclosure .icon-caret {
+    fill: rgb(var(--mfg-color-text-base)) !important;
+  }
+
+  /* Force correct color for newsletter button icon (inherits from button color) */
+  .newsletter-form__button.field__button {
+    color: rgb(var(--mfg-color-text-base)) !important;
+  }
+
+  /* Active nav link squiggle */
+  .header__active-menu-item {
+    text-decoration-color: rgb(var(--mfg-color-accent));
   }
 }
 /* End MFGnerd Custom Theme Variables */
@@ -2523,7 +2547,7 @@ input[type='checkbox'] {
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
   letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
-  color: rgba(var(--color-foreground), 0.75); /* Match previous .h2 color */
+  color: rgb(var(--color-foreground)); /* Use base text color */
   line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale))); /* Match base h2 line-height */
 }
 
@@ -2898,7 +2922,7 @@ details[open] > .header__submenu {
 .header__menu-item {
   padding: 1.2rem;
   text-decoration: none;
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgb(var(--color-foreground)); /* Use base text color */
 }
 
 .header__menu-item:hover {
@@ -2929,7 +2953,10 @@ details[open] > .header__menu-item .icon-caret {
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
   color: rgb(var(--color-foreground));
-  text-decoration: underline;
+  /* text-decoration: underline; <- Replaced by wavy */
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgb(var(--mfg-color-accent)); /* Default to light theme accent */
   text-underline-offset: 0.3rem;
 }
 
@@ -3724,6 +3751,12 @@ html:not([data-theme="dark"]) .header__icon--theme .theme-icon--moon {
 }
 
 /* MFGnerd Header Adjustments */
+
+/* Reset margin for H1 logo on homepage to fix alignment */
+h1.header__heading {
+  margin: 0;
+}
+
 /* Removed max-width override to use default --page-width */
 /*
 .header.page-width {
@@ -3742,30 +3775,27 @@ html[data-theme="dark"] .header.page-width {
    border-bottom: 0.1rem solid rgb(var(--mfg-color-border));
 }
 
-/* Standardize Nav Text Size */
+/* Standardize Nav Text Size & Weight */
 .header__menu-item {
   font-size: 1.5rem; /* Match base body font size */
+  font-weight: 600; /* Make nav links bolder */
 }
 
 /* Ensure nav items display inline */
 .header__inline-menu .list-menu--inline > .list-menu__item {
-  display: inline-block; /* Force items inline */
+  /* display: inline-block; <- Removed to allow flex layout */
   padding-left: 1rem; /* Add some spacing */
   padding-right: 1rem;
 }
 /* End MFGnerd Header Adjustments */
 
-/* MFGnerd Blog Link Style */
-.header__icon--blog {
-  padding: 1.2rem; /* Match other icon padding */
-  text-decoration: none;
-  font-size: 1.5rem; /* Match button font size */
-  line-height: 1;
-  color: rgb(var(--color-foreground)); /* Use theme foreground color */
+/* MFGnerd Logo Font Weight */
+.header__heading-link {
+  font-weight: 600; /* Make logo slightly bolder if needed */
 }
 
-.header__icon--blog:hover {
-  color: rgb(var(--color-link)); /* Use theme link color on hover */
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
+/* MFGnerd Theme Toggle Size */
+.header__icon--theme .svg-wrapper {
+  width: 24px; /* Reduce size */
+  height: 24px; /* Reduce size */
 }

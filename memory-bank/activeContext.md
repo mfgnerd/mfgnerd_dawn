@@ -28,26 +28,36 @@
     *   **Header Width:** Removed fixed `max-width` override in `assets/base.css` to allow header to use standard `--page-width`.
     *   **Header Border (Dark Mode):** Removed `header-wrapper--border-bottom` class from `sections/header.liquid` and added CSS rule to apply border only to `.header.page-width` in dark mode (`assets/base.css`).
     *   **Header Layout:** Adjusted desktop grid columns for `.header--middle-left` in `assets/base.css` to `auto 1fr auto` to push icons right.
-    *   **Stacked Navigation:** Attempted fix by setting `.header__inline-menu .list-menu--inline > .list-menu__item` to `display: inline-block` in `assets/base.css`.
+    *   **Stacked Navigation:** Removed conflicting `display: inline-block` rule from `.header__inline-menu .list-menu--inline > .list-menu__item` in `assets/base.css` to allow flex layout. *(Fixed)*
+    *   **Dark Mode Text/Icons:** Added specific rules in `assets/base.css` to force correct dark mode text color for `.form__label` and correct `fill` color for icons (`.select .icon-caret`, `.quantity__button .icon`, `summary .icon-caret`, `.disclosure .icon-caret`). Also added rule to set `color` on `.newsletter-form__button.field__button` for the arrow icon. *(Fixed, needs verification)*
+    *   **Homepage Logo Alignment:** Added `h1.header__heading { margin: 0; }` to `assets/base.css` to remove default H1 margins.
+    *   **Theme Toggle Size:** Reduced size of `.header__icon--theme .svg-wrapper` to `24px` in `assets/base.css`.
+    *   **Header Font Weight:** Set `font-weight: 600` for `.header__heading-link`, `.header__menu-item`, `.header__icon--blog` in `assets/base.css`.
 
 ## 3. Feedback / Issues to Address (Consolidated)
 
-*   **Stacked Navigation:** Header navigation items (Home, Catalog, Contact) are still stacked vertically despite CSS adjustments.
-*   **Header Width/Border Alignment:** Header and dark mode border might still not perfectly align with the main page content width (needs verification after nav fix).
+*   **Stacked Navigation:** Fixed.
+*   **Homepage Logo Alignment:** Added CSS to remove H1 margin. *(Needs verification)*
+*   **Theme Toggle Size:** Reduced icon size. *(Needs verification)*
+*   **Header Font Weight:** Increased font weight for logo, nav, blog link. *(Needs verification)*
+*   **Header Width/Border Alignment:** Header and dark mode border might not perfectly align with the main page content width. *(Needs verification)*
 *   **Global Color Application:** Theme toggle doesn't change colors globally (likely due to Shopify color schemes overriding base styles).
-*   **Nav Text Size:** Discrepancy in navigation text sizes between the two sites.
-*   **Dark Mode Text Color (Other Elements):** Need to verify if other elements besides common text containers still show incorrect colors (black or light grey) in dark mode.
+*   **Nav Text Size:** Discrepancy in navigation text sizes between the two sites (partially addressed by font-weight change).
+*   **Dark Mode Text Color (Other Elements):** Added specific rules for `.form__label`. *(Fixed, needs verification)*
+*   **Dark Mode Icon Color:** Added specific rules for common icons (dropdown arrows, quantity buttons, newsletter arrow). *(Fixed, needs verification)*
 *   **Footer Adjustments:** Needs styling for consistency and potential "Store" link.
 *   **General Styling:** Review inputs, cards, spacing.
 *   **Mobile Menu:** Add "Blog" link.
 
 ## 4. Next Steps (Immediate To-Do)
 
-1.  **Fix Stacked Navigation:** Re-investigate CSS for `.header__inline-menu`, `.list-menu--inline`, and `.list-menu__item`. Check grid column constraints or potential conflicting flex/display properties.
-2.  **Verify Header Width/Border:** Confirm alignment after navigation fix.
-3.  **Refine Color Application:** Address global color issues, likely by targeting specific component CSS or increasing override specificity.
-4.  **Standardize Nav Text Size:** Adjust `font-size` in relevant CSS.
-5.  Address other pending items from `progress.md`.
+1.  **Verify Stacked Navigation Fix:** Confirm navigation items are horizontal.
+2.  **Verify Header Fixes:** Confirm homepage logo alignment, theme toggle size, and header font weights.
+3.  **Verify Dark Mode Text/Icon Fixes:** Confirm labels and icons (including newsletter arrow) now have correct colors in dark mode.
+4.  **Verify Header Width/Border:** Confirm alignment.
+5.  **Standardize Nav Text Size:** Further adjustments if needed after font-weight change.
+6.  **Refine Color Application:** Address remaining global color issues.
+7.  Address other pending items from `progress.md`.
 
 ## 5. Active Preferences & Patterns
 
@@ -64,3 +74,6 @@
 *   Inline scripts in `<head>` are necessary to prevent FOUC with client-side theme switching.
 *   CSS Grid and Flexbox interactions within the header require careful adjustment to achieve the desired layout.
 *   `replace_in_file` can be unreliable when multiple failures/reverts occur; `write_to_file` is a necessary fallback.
+*   Flex item display properties (`inline-block`) can conflict with parent flex container rules (`inline-flex`).
+*   Targeting SVGs directly for `fill` might not work if they use `fill="currentColor"`. Instead, set the `color` property of the parent element (e.g., the button).
+*   Homepage-specific elements (like `h1` for the logo) might require targeted CSS rules to override default browser styles or theme styles applied only on that page type.

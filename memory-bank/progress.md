@@ -20,16 +20,20 @@
 
 ## 3. What's Left to Build / Refine (High-Level To-Do)
 
-*   **[ ] Header Adjustments:**
-    *   **[ ] Fix Stacked Navigation:** Items (Home, Catalog, Contact) still stack vertically. Needs CSS fix for `.header__inline-menu .list-menu--inline` or its items.
+*   **[X] Header Adjustments:**
+    *   **[X] Fix Stacked Navigation:** Items (Home, Catalog, Contact) were stacked vertically. Removed conflicting `display: inline-block` rule from `.header__inline-menu .list-menu--inline > .list-menu__item` in `assets/base.css`. *(Fixed)*
+    *   **[X] Fix Homepage Logo Alignment:** Added `h1.header__heading { margin: 0; }` to `assets/base.css`. *(Needs verification)*
+    *   **[X] Adjust Theme Toggle Size:** Reduced size of `.header__icon--theme .svg-wrapper` to `24px` in `assets/base.css`. *(Needs verification)*
+    *   **[X] Adjust Header Font Weight:** Set `font-weight: 600` for logo, nav, blog link in `assets/base.css`. *(Needs verification)*
     *   **[ ] Verify Header Width/Border:** Confirm alignment matches page content after navigation fix.
     *   **[X] Adjust header width/padding:** Fixed `max-width` removed, should use `--page-width`. *(Marking as potentially done, needs verification)*.
     *   **[X] Add thin orange bottom border in dark mode:** Rule added for `.header.page-width`. *(Marking as done)*.
-    *   **[ ] Standardize navigation text size:** Needs CSS adjustment.
+    *   **[ ] Standardize navigation text size:** Needs further CSS adjustment if font-weight change isn't sufficient.
     *   **[ ] Add "Blog" link to mobile menu drawer.**
 *   **[ ] Color Application Refinement:**
     *   **[ ] Ensure background/text colors apply globally:** Address Shopify scheme overrides.
-    *   **[ ] Fix Dark Mode Text Colors (Other Elements):** Verify elements beyond common text containers.
+    *   **[X] Fix Dark Mode Text Colors (Other Elements):** Added rule for `.form__label` in `assets/base.css`. *(Fixed, needs verification)*
+    *   **[X] Fix Dark Mode Icon Colors:** Added rules for `.select .icon-caret`, `.quantity__button .icon`, etc. Added rule for `.newsletter-form__button.field__button` color in `assets/base.css`. *(Fixed, needs verification)*
     *   **[ ] Apply correct card background/text colors (`--mfg-color-card`, etc.).**
     *   **[ ] Apply correct button colors (primary/secondary, background/text).**
     *   **[ ] Apply correct border colors (`--mfg-color-border`)** (beyond header).
@@ -49,11 +53,12 @@
 
 ## 4. Known Issues / Feedback (Current)
 
-*   **Stacked Navigation:** Header nav items display vertically.
-*   **Header Width/Border Alignment:** May still not perfectly align with page content (needs verification).
+*   **Stacked Navigation:** Fixed.
+*   **Header Width/Border Alignment:** May still not perfectly align with page content. *(Needs verification)*
 *   **Global Color Application:** Theme toggle doesn't apply colors globally due to Shopify color scheme overrides.
-*   **Nav Text Size:** Inconsistent with Astro site.
-*   **Dark Mode Text Color (Other Elements):** Potential issues beyond common text areas.
+*   **Nav Text Size:** Inconsistent with Astro site (partially addressed by font-weight change).
+*   **Dark Mode Text Color (Other Elements):** Added rule for `.form__label`. *(Fixed, needs verification)*
+*   **Dark Mode Icon Color:** Added rules for common icons. Added rule for newsletter arrow button color. *(Fixed, needs verification)*
 
 ## 5. Decisions Log
 
@@ -67,3 +72,8 @@
 *   **Decision:** Simplify header logo HTML by removing inner `span` and styling `<a>` tag directly.
 *   **Decision:** Apply dark mode header border to `.header.page-width` instead of `.header-wrapper`.
 *   **Decision:** Use `write_to_file` as fallback for `assets/base.css` due to repeated `replace_in_file` failures.
+*   **Decision:** Remove `display: inline-block` from `.header__inline-menu .list-menu--inline > .list-menu__item` in `assets/base.css` to fix stacked navigation.
+*   **Decision:** Add specific rules to `assets/base.css` under `html[data-theme="dark"]` to force correct text color for `.form__label` and `fill` color for various icons. Set `color` on `.newsletter-form__button.field__button` for newsletter arrow.
+*   **Decision:** Add `h1.header__heading { margin: 0; }` to `assets/base.css` to fix homepage logo alignment.
+*   **Decision:** Reduce size of `.header__icon--theme .svg-wrapper` to `24px` in `assets/base.css`.
+*   **Decision:** Set `font-weight: 600` for `.header__heading-link`, `.header__menu-item`, `.header__icon--blog` in `assets/base.css`.
