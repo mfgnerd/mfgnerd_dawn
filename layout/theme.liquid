@@ -68,9 +68,45 @@
         {% if forloop.index == 1 -%}
           :root,
         {%- endif %}
-        .color-{{ scheme.id }} {
-          --color-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
-        {% if scheme.settings.background_gradient != empty %}
+        /* Original Shopify Scheme Definition - We'll override below based on data-theme */
+        /* .color-{{ scheme.id }} { ... } */
+
+        /* MFGnerd Light Theme Overrides for Scheme {{ scheme.id }} */
+        html[data-theme="light"] .color-{{ scheme.id }} {
+          --color-background: var(--mfg-color-fill);
+          --color-foreground: var(--mfg-color-text-base);
+          --color-button: var(--mfg-color-accent);
+          --color-button-text: var(--mfg-color-fill);
+          --color-secondary-button: var(--mfg-color-fill);
+          --color-secondary-button-text: var(--mfg-color-accent);
+          --color-link: var(--mfg-color-accent);
+          --color-badge-background: var(--mfg-color-card);
+          --color-badge-foreground: var(--mfg-color-text-base);
+          --color-badge-border: var(--mfg-color-border);
+          --color-shadow: var(--mfg-color-text-base);
+          --gradient-background: rgb(var(--mfg-color-fill)); /* Simple fallback for gradient */
+          /* TODO: Add overrides for --color-background-contrast if needed */
+        }
+
+         /* MFGnerd Dark Theme Overrides for Scheme {{ scheme.id }} */
+        html[data-theme="dark"] .color-{{ scheme.id }} {
+           --color-background: var(--mfg-color-fill);
+           --color-foreground: var(--mfg-color-text-base);
+           --color-button: var(--mfg-color-accent);
+           --color-button-text: var(--mfg-color-fill); /* Check contrast */
+           --color-secondary-button: var(--mfg-color-fill);
+           --color-secondary-button-text: var(--mfg-color-accent);
+           --color-link: var(--mfg-color-accent);
+           --color-badge-background: var(--mfg-color-card);
+           --color-badge-foreground: var(--mfg-color-text-base);
+           --color-badge-border: var(--mfg-color-border);
+           --color-shadow: var(--mfg-color-text-base);
+           --gradient-background: rgb(var(--mfg-color-fill)); /* Simple fallback for gradient */
+           /* TODO: Add overrides for --color-background-contrast if needed */
+        }
+
+        /* Keep original gradient definition for reference if needed */
+        /* {% if scheme.settings.background_gradient != empty %}
           --gradient-background: {{ scheme.settings.background_gradient }};
         {% else %}
           --gradient-background: {{ scheme.settings.background }};

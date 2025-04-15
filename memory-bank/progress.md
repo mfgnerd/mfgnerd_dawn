@@ -13,14 +13,14 @@
 
 Based on `activeContext.md`, the following customizations need to be implemented in the Dawn theme:
 
-*   **[ ] Typography:**
-    *   [ ] Add IBM Plex Mono font (e.g., via Google Fonts link or local files).
-    *   [ ] Apply IBM Plex Mono globally via CSS.
-*   **[ ] Color Scheme & Theme Toggle:**
-    *   [ ] Define light & dark mode CSS variables in theme CSS.
-    *   [ ] Add theme toggle button HTML/Liquid (likely in header).
-    *   [ ] Implement theme toggle JavaScript logic (toggle `data-theme`, use `localStorage`).
-    *   [ ] Apply CSS variables throughout theme styles to match `mfgnerd.ca` palettes.
+*   **[X] Typography:**
+    *   [X] Add IBM Plex Mono font (e.g., via Google Fonts link or local files).
+    *   [X] Apply IBM Plex Mono globally via CSS.
+*   **[X] Color Scheme & Theme Toggle:**
+    *   [X] Define light & dark mode CSS variables in theme CSS.
+    *   [X] Add theme toggle button HTML/Liquid (likely in header).
+    *   [X] Implement theme toggle JavaScript logic (toggle `data-theme`, use `localStorage`).
+    *   [X] Apply CSS variables throughout theme styles to match `mfgnerd.ca` palettes (Initial mapping done).
 *   **[ ] Layout & Branding:**
     *   [ ] Integrate "MFGnerd" logo (text or SVG) into the header.
     *   [ ] Adjust header layout/styling for consistency.
