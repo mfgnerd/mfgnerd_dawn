@@ -2926,16 +2926,15 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item:hover {
-  color: rgb(var(--color-foreground));
+  color: rgb(var(--mfg-color-accent)); /* Change color to accent on hover */
 }
 
 .header__menu-item span {
   transition: text-decoration var(--duration-short) ease;
 }
-
 .header__menu-item:hover span {
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  text-decoration: none; /* Remove underline on hover */
+  /* text-underline-offset: 0.3rem; */ /* No longer needed */
 }
 
 details[open] > .header__menu-item {

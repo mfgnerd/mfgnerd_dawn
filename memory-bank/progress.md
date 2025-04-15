@@ -24,16 +24,20 @@
     *   **[X] Fix Stacked Navigation:** Items (Home, Catalog, Contact) were stacked vertically. Removed conflicting `display: inline-block` rule from `.header__inline-menu .list-menu--inline > .list-menu__item` in `assets/base.css`. *(Fixed)*
     *   **[X] Fix Homepage Logo Alignment:** Added `h1.header__heading { margin: 0; }` to `assets/base.css`. *(Needs verification)*
     *   **[X] Adjust Theme Toggle Size:** Reduced size of `.header__icon--theme .svg-wrapper` to `24px` in `assets/base.css`. *(Needs verification)*
-    *   **[X] Adjust Header Font Weight:** Set `font-weight: 600` for logo, nav, blog link in `assets/base.css`. *(Needs verification)*
+    *   **[X] Adjust Header Font Weight:** Set `font-weight: 600` for logo and nav links in `assets/base.css`. *(Fixed, needs verification)*
+    *   **[X] Change Header Font Color:** Set color to `rgb(var(--color-foreground))` for logo and nav links in `assets/base.css`. *(Fixed, needs verification)*
+    *   **[X] Change Active Nav Style:** Set to wavy underline with accent color for `.header__active-menu-item` in `assets/base.css`. *(Fixed, needs verification)*
+    *   **[X] Change Nav Hover Style:** Removed underline, set color to accent for `.header__menu-item:hover` in `assets/base.css`. *(Fixed, needs verification)*
+    *   **[X] Remove Custom Blog Link:** Removed HTML from `sections/header.liquid` and CSS from `assets/base.css`. *(Done)*
     *   **[ ] Verify Header Width/Border:** Confirm alignment matches page content after navigation fix.
     *   **[X] Adjust header width/padding:** Fixed `max-width` removed, should use `--page-width`. *(Marking as potentially done, needs verification)*.
     *   **[X] Add thin orange bottom border in dark mode:** Rule added for `.header.page-width`. *(Marking as done)*.
     *   **[ ] Standardize navigation text size:** Needs further CSS adjustment if font-weight change isn't sufficient.
-    *   **[ ] Add "Blog" link to mobile menu drawer.**
+    *   **[ ] Add "Blog" link to mobile menu drawer (via Shopify Navigation).**
 *   **[ ] Color Application Refinement:**
     *   **[ ] Ensure background/text colors apply globally:** Address Shopify scheme overrides.
     *   **[X] Fix Dark Mode Text Colors (Other Elements):** Added rule for `.form__label` in `assets/base.css`. *(Fixed, needs verification)*
-    *   **[X] Fix Dark Mode Icon Colors:** Added rules for `.select .icon-caret`, `.quantity__button .icon`, etc. Added rule for `.newsletter-form__button.field__button` color in `assets/base.css`. *(Fixed, needs verification)*
+    *   **[X] Fix Dark Mode Icon Colors:** Added rules for common icons. Added rule for newsletter arrow button color. *(Fixed, needs verification)*
     *   **[ ] Apply correct card background/text colors (`--mfg-color-card`, etc.).**
     *   **[ ] Apply correct button colors (primary/secondary, background/text).**
     *   **[ ] Apply correct border colors (`--mfg-color-border`)** (beyond header).
@@ -56,6 +60,9 @@
 *   **Stacked Navigation:** Fixed.
 *   **Header Width/Border Alignment:** May still not perfectly align with page content. *(Needs verification)*
 *   **Global Color Application:** Theme toggle doesn't apply colors globally due to Shopify color scheme overrides.
+*   **Header Font Color:** Was grey, changed to base foreground. *(Fixed, needs verification)*
+*   **Active Nav Style:** Was solid underline, changed to wavy accent color. *(Fixed, needs verification)*
+*   **Nav Hover Style:** Was underline, changed to accent color. *(Fixed, needs verification)*
 *   **Nav Text Size:** Inconsistent with Astro site (partially addressed by font-weight change).
 *   **Dark Mode Text Color (Other Elements):** Added rule for `.form__label`. *(Fixed, needs verification)*
 *   **Dark Mode Icon Color:** Added rules for common icons. Added rule for newsletter arrow button color. *(Fixed, needs verification)*
@@ -76,4 +83,8 @@
 *   **Decision:** Add specific rules to `assets/base.css` under `html[data-theme="dark"]` to force correct text color for `.form__label` and `fill` color for various icons. Set `color` on `.newsletter-form__button.field__button` for newsletter arrow.
 *   **Decision:** Add `h1.header__heading { margin: 0; }` to `assets/base.css` to fix homepage logo alignment.
 *   **Decision:** Reduce size of `.header__icon--theme .svg-wrapper` to `24px` in `assets/base.css`.
-*   **Decision:** Set `font-weight: 600` for `.header__heading-link`, `.header__menu-item`, `.header__icon--blog` in `assets/base.css`.
+*   **Decision:** Set `font-weight: 600` for `.header__heading-link`, `.header__menu-item` in `assets/base.css`.
+*   **Decision:** Remove custom Blog link HTML and CSS.
+*   **Decision:** Change header link colors to `rgb(var(--color-foreground))`.
+*   **Decision:** Change active nav link style to wavy underline with accent color.
+*   **Decision:** Remove underline and set hover color to accent for `.header__menu-item:hover`.
