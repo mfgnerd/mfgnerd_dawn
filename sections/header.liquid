@@ -122,7 +122,8 @@
   {% if header_tag == 'sticky-header' %}
     data-sticky-type="{{ section.settings.sticky_header_type }}"
   {% endif %}
-  class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}"
+  class="header-wrapper color-{{ section.settings.color_scheme }} gradient"
+  {% comment %} MFGnerd: Removed header-wrapper--border-bottom class {% endcomment %}
 >
   {%- liquid
     assign social_links = false
@@ -153,7 +154,7 @@
       {%- endif -%}
       <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
         {% comment %} Replace default logo/shop name with MFGnerd text {% endcomment %}
-        <span class="h2">MFGnerd</span>
+        MFGnerd
       </a>
       {%- if request.page_type == 'index' -%}
         </h1>
@@ -176,7 +177,7 @@
       {%- endif -%}
       <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
         {% comment %} Replace default logo/shop name with MFGnerd text {% endcomment %}
-        <span class="h2">MFGnerd</span>
+        MFGnerd
       </a>
       {%- if request.page_type == 'index' -%}
         </h1>

@@ -67,6 +67,15 @@ html[data-theme="dark"] {
   --color-badge-border: var(--mfg-color-border);
   --color-shadow: var(--mfg-color-text-base);
   /* TODO: Map other relevant Shopify vars if needed */
+
+  /* Force correct text color for common text elements in dark mode */
+  p,
+  .rte, /* Target the container */
+  .rte p, /* Target paragraphs within RTE */
+  .product__description /* Target product description container */
+   {
+    color: rgb(var(--mfg-color-text-base)) !important;
+  }
 }
 /* End MFGnerd Custom Theme Variables */
 
@@ -336,7 +345,7 @@ h5,
   letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
   color: rgb(var(--color-foreground));
   line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
-  word-break: break-word;
+  /* word-break: break-word; <- Removed */
 }
 
 .hxxl {
@@ -2457,7 +2466,7 @@ input[type='checkbox'] {
 
   .header--middle-left {
     grid-template-areas: 'heading navigation icons';
-    grid-template-columns: auto auto 1fr;
+    grid-template-columns: auto 1fr auto; /* Make nav flexible, push icons right */
     column-gap: 2rem;
   }
 
@@ -2493,34 +2502,44 @@ input[type='checkbox'] {
 
 .header__heading {
   margin: 0;
-  line-height: 0;
+  /* line-height: 0; <- Removed */
 }
 
 .header > .header__heading-link {
-  line-height: 0;
+  /* line-height: 0; <- Removed */
 }
 
 .header__heading,
 .header__heading-link {
   grid-area: heading;
-  justify-self: center;
 }
 
 .header__heading-link {
   display: inline-block;
-  padding: 0.75rem;
   text-decoration: none;
-  word-break: break-word;
+  white-space: nowrap;
+  /* Apply h2 styles directly to the link now */
+  font-size: calc(var(--font-heading-scale) * 2rem);
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
+  color: rgba(var(--color-foreground), 0.75); /* Match previous .h2 color */
+  line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale))); /* Match base h2 line-height */
 }
 
-.header__heading-link:hover .h2 {
+.header__heading-link:hover { /* Style link hover directly */
   color: rgb(var(--color-foreground));
 }
 
+/* Remove the rule for .h2 inside the link as it's no longer needed */
+/*
 .header__heading-link .h2 {
-  line-height: 1;
+  line-height: initial;
+  white-space: nowrap;
   color: rgba(var(--color-foreground), 0.75);
 }
+*/
 
 .header__heading-logo {
   height: auto;
@@ -2558,7 +2577,7 @@ input[type='checkbox'] {
 
   .header__heading,
   .header__heading-link {
-    justify-self: start;
+    /* justify-self: start; <- Removed */
   }
 
   .header--middle-center .header__heading-link,
@@ -2834,6 +2853,20 @@ details[open] > .header__submenu {
   margin-left: -1.2rem;
   grid-area: navigation;
   display: none;
+}
+
+/* MFGnerd: Prevent nav items from wrapping */
+.header__inline-menu .list-menu--inline {
+  display: flex; /* Ensure block-level flex container */
+  flex-wrap: nowrap;
+  /* justify-content: flex-end; <- Removed for now */
+}
+
+/* MFGnerd: Ensure nav items display inline */
+.header__inline-menu .list-menu--inline > .list-menu__item {
+  display: inline-block; /* Force items inline */
+  padding-left: 1rem; /* Add some spacing */
+  padding-right: 1rem;
 }
 
 .header--top-center .header__inline-menu,
@@ -3691,6 +3724,31 @@ html:not([data-theme="dark"]) .header__icon--theme .theme-icon--moon {
    /* fill: rgb(var(--mfg-color-accent)); */
 }
 
+/* MFGnerd Header Adjustments */
+/* Removed max-width override to use default --page-width */
+/*
+.header.page-width {
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+*/
+
+.header__heading {
+  line-height: initial; /* Keep this override */
+}
+
+/* Apply dark mode border only to the page-width header element */
+html[data-theme="dark"] .header.page-width {
+   border-bottom: 0.1rem solid rgb(var(--mfg-color-border));
+}
+
+/* Standardize Nav Text Size */
+.header__menu-item {
+  font-size: 1.5rem; /* Match base body font size */
+}
+/* End MFGnerd Header Adjustments */
+
 /* MFGnerd Blog Link Style */
 .header__icon--blog {
   padding: 1.2rem; /* Match other icon padding */
@@ -3705,3 +3763,33 @@ html:not([data-theme="dark"]) .header__icon--theme .theme-icon--moon {
   text-decoration: underline;
   text-underline-offset: 0.3rem;
 }
+
+</file_content>
+
+Now that you have the latest state of the file, try the operation again with fewer, more precise SEARCH blocks. For large files especially, it may be prudent to try to limit yourself to <5 SEARCH/REPLACE blocks at a time, then wait for the user to respond with the result of the operation before following up with another replace_in_file call to make additional edits.
+(If you run into this error 3 times in a row, you may use the write_to_file tool as a fallback.)
+</error><environment_details>
+# VSCode Visible Files
+assets/base.css
+
+# VSCode Open Tabs
+memory-bank/projectbrief.md
+memory-bank/productContext.md
+memory-bank/systemPatterns.md
+memory-bank/techContext.md
+assets/theme-toggle.js
+memory-bank/activeContext.md
+sections/header.liquid
+layout/theme.liquid
+assets/base.css
+memory-bank/progress.md
+
+# Current Time
+4/15/2025, 5:52:20 AM (UTC, UTC+0:00)
+
+# Context Window Usage
+938,151 / 1,048.576K tokens used (89%)
+
+# Current Mode
+ACT MODE
+</environment_details>

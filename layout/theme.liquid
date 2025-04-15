@@ -5,6 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
+    {% comment %} MFGnerd: Add inline script to prevent FOUC {% endcomment %}
+    <script>
+      (function () {
+        const theme = localStorage.getItem('theme');
+        if (theme) {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+      })();
+    </script>
+    {% comment %} End MFGnerd FOUC Fix {% endcomment %}
     <link rel="canonical" href="{{ canonical_url }}">
 
     {%- if settings.favicon != blank -%}
