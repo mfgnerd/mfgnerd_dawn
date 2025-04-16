@@ -71,6 +71,61 @@ details[open].menu-opening > .menu-drawer__submenu {
   }
 }
 
+/* Styles for the top icons wrapper (Account, Theme) */
+.menu-drawer__top-icons-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* Space icons evenly */
+  padding: 1.5rem 2rem; /* Padding around icons */
+  background-color: rgba(var(--color-foreground), 0.03); /* Match utility links background */
+  border-bottom: 1px solid rgba(var(--color-foreground), 0.08); /* Separator line */
+}
+
+/* Adjust icon link/button styling within the top wrapper */
+.menu-drawer__top-icons-wrapper .menu-drawer__account,
+.menu-drawer__top-icons-wrapper .menu-drawer__theme-toggle {
+  padding: 0;
+  margin: 0; /* Remove extra margins */
+}
+
+/* Ensure icons inside the top wrapper are visible and sized correctly */
+.menu-drawer__top-icons-wrapper .header__icon,
+.menu-drawer__top-icons-wrapper .menu-drawer__account .svg-wrapper {
+  height: 2.2rem; /* Consistent icon height */
+  width: 2.2rem; /* Consistent icon width */
+}
+
+.menu-drawer__top-icons-wrapper .menu-drawer__account account-icon > .svg-wrapper {
+  height: 2.2rem;
+  width: 2.2rem;
+  margin: 0; /* Reset margin */
+}
+
+.menu-drawer__top-icons-wrapper .menu-drawer__account shop-user-avatar {
+  --shop-avatar-size: 2.2rem; /* Match icon size */
+  margin: 0; /* Reset margin */
+}
+
+/* Styles for the full search bar container */
+.menu-drawer__search--full-bar {
+  padding: 1rem 2rem; /* Padding around the search bar */
+  background-color: rgba(var(--color-foreground), 0.03); /* Match utility links background */
+}
+
+/* Ensure the search form itself takes full width */
+.menu-drawer__search--full-bar .search-modal__form {
+  width: 100%;
+}
+
+/* Adjustments for the search input and button if needed (depends on header-search snippet) */
+.menu-drawer__search--full-bar .search__input {
+  /* Add specific styles if needed */
+}
+.menu-drawer__search--full-bar .search__button {
+ /* Add specific styles if needed */
+}
+
+
 .menu-drawer__inner-container {
   position: relative;
   height: 100%;

@@ -5,7 +5,8 @@
  * stored in localStorage or OS settings.
  */
 (function () {
-  const themeToggleButton = document.getElementById('theme-toggle-btn');
+  // Select both the header and drawer theme toggle buttons
+  const themeToggleButtons = document.querySelectorAll('#theme-toggle-btn, #theme-toggle-btn-drawer');
   const htmlElement = document.documentElement;
   const storageKey = 'mfgnerd-theme-preference';
 
@@ -15,9 +16,12 @@
    */
   const applyTheme = (theme) => {
     htmlElement.setAttribute('data-theme', theme);
-    if (themeToggleButton) {
-      themeToggleButton.setAttribute('aria-label', theme);
-    }
+    // Update aria-label on all found buttons
+    themeToggleButtons.forEach((button) => {
+      if (button) {
+        button.setAttribute('aria-label', theme);
+      }
+    });
     // Optional: Dispatch an event if other components need to react to theme changes
     // document.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));
   };
@@ -64,11 +68,33 @@
   const initialTheme = getPreferredTheme();
   applyTheme(initialTheme);
 
-  // Add event listener to the button
-  if (themeToggleButton) {
-    themeToggleButton.addEventListener('click', toggleTheme);
+  // Add event listener to all found buttons
+  if (themeToggleButtons.length > 0) {
+    themeToggleButtons.forEach((button) => {
+      if (button) {
+        // Check if the element actually exists
+        button.addEventListener('click', (event) => {
+          toggleTheme(); // Toggle the theme first
+
+          // If the clicked button is the one inside the drawer, close the drawer
+          if (button.id === 'theme-toggle-btn-drawer') {
+            const headerDrawer = button.closest('header-drawer');
+            if (headerDrawer) {
+              // Find the main summary toggle to pass for focus restoration
+              const summaryElement = headerDrawer.querySelector('details > summary.header__icon--menu');
+              if (summaryElement) {
+                headerDrawer.closeMenuDrawer(event, summaryElement);
+              } else {
+                // Fallback if summary isn't found (shouldn't happen ideally)
+                headerDrawer.closeMenuDrawer(event);
+              }
+            }
+          }
+        });
+      }
+    });
   } else {
-    console.warn('Theme toggle button (#theme-toggle-btn) not found.');
+    console.warn('No theme toggle buttons (#theme-toggle-btn, #theme-toggle-btn-drawer) found.');
   }
 
   // Optional: Listen for OS theme changes if no preference is stored
