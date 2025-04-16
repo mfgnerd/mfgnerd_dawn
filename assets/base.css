@@ -83,17 +83,41 @@ html[data-theme="dark"] {
   {
      fill: rgb(var(--mfg-color-text-base)) !important;
   }
+}
 
-  /* Ensure other potential icons also inherit color */
-  summary .icon-caret,
-  .disclosure .icon-caret {
-    fill: rgb(var(--mfg-color-text-base)) !important;
+/* Apply mobile header layout by default */
+.header--mobile-left {
+  /* Logo | Icons - Push to edges */
+  grid-template-columns: auto auto; /* Remove the spacer column */
+  justify-content: space-between; /* Push logo left, icons right */
+  column-gap: 1.5rem; /* Keep gap between logo/icons if they get close */
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .medium-hide {
+    display: none !important;
   }
 
-  /* Force correct color for newsletter button icon (inherits from button color) */
-  .newsletter-form__button.field__button {
-    color: rgb(var(--mfg-color-text-base)) !important;
+  /* Tablet-specific adjustments if needed, otherwise the mobile rules apply */
+  /* .header--mobile-left { ... } */
+
+  /* header-drawer is now inside header__icons, no specific positioning needed here */
+
+  .header--mobile-left .header__icons {
+     padding-right: 0; /* Remove padding since hamburger is now part of it */
+     gap: 0.5rem; /* Add small gap between hamburger and cart */
+     align-items: center; /* Ensure vertical alignment */
   }
+
+  /* Ensure hamburger icon comes before cart icon in the flex layout */
+  .header--mobile-left .header__icons header-drawer {
+    order: 1;
+  }
+  .header--mobile-left .header__icons #cart-icon-bubble {
+    order: 2;
+    margin-right: 0; /* Reset margin */
+  }
+}
 
   /* Active nav link squiggle color is handled by the general rule below now */
   /*
@@ -101,7 +125,6 @@ html[data-theme="dark"] {
     text-decoration-color: rgb(var(--mfg-color-accent));
   }
   */
-}
 /* End MFGnerd Custom Theme Variables */
 
 :root {
@@ -585,10 +608,44 @@ table:not([class]) th {
   .medium-hide {
     display: none !important;
   }
+
+  .header--mobile-left {
+    /* Logo | Spacer | Icons */
+    grid-template-columns: auto 1fr auto;
+    column-gap: 1.5rem; /* Add some gap */
+  }
+
+  /* header-drawer is now inside header__icons, no specific positioning needed here */
+
+  .header--mobile-left .header__icons {
+     padding-right: 0; /* Remove padding since hamburger is now part of it */
+     gap: 0.5rem; /* Add small gap between hamburger and cart */
+     align-items: center; /* Ensure vertical alignment */
+  }
+
+  /* Ensure hamburger icon comes before cart icon in the flex layout */
+  .header--mobile-left .header__icons header-drawer {
+    order: 1;
+  }
+  .header--mobile-left .header__icons #cart-icon-bubble {
+    order: 2;
+    margin-right: 0; /* Reset margin */
+  }
 }
 
 @media screen and (min-width: 990px) {
   .large-up-hide {
+    display: none !important;
+  }
+  /* Define .large-up-show to hide elements below 990px */
+  .large-up-show {
+    display: block !important; /* Or inline-flex, flex etc. depending on element */
+  }
+}
+
+/* Hide .large-up-show below 990px */
+@media screen and (max-width: 989px) {
+  .large-up-show {
     display: none !important;
   }
 }
@@ -2633,8 +2690,32 @@ input[type='checkbox'] {
   }
 
   .header--mobile-left {
-    grid-template-columns: auto 2fr 1fr;
+    /* Logo | Spacer | Icons */
+    grid-template-columns: auto 1fr auto;
+    column-gap: 1.5rem; /* Add some gap */
   }
+
+  .header--mobile-left header-drawer {
+    grid-area: unset; /* Reset grid area if set elsewhere */
+    justify-self: end; /* Move hamburger to the right group */
+    margin-left: 0; /* Reset margin */
+  }
+
+  .header--mobile-left .header__icons {
+     padding-right: 0; /* Remove padding since hamburger is now part of it */
+     gap: 0.5rem; /* Add small gap between hamburger and cart */
+     align-items: center; /* Ensure vertical alignment */
+  }
+
+  /* Ensure hamburger icon comes before cart icon in the flex layout */
+  .header--mobile-left .header__icons header-drawer {
+    order: 1;
+  }
+  .header--mobile-left .header__icons #cart-icon-bubble {
+    order: 2;
+    margin-right: 0; /* Reset margin */
+  }
+
 }
 
 @media screen and (min-width: 990px) {
@@ -3867,4 +3948,36 @@ html:not([data-theme="dark"]) .header__icon--theme .theme-icon--moon {
 /* Explicitly set fill for theme toggle SVGs on hover */
 .header__icons button.header__icon--theme:hover .svg-wrapper svg {
    fill: currentColor;
+}
+
+/* Styles for Search and Theme Toggle inside Mobile Drawer */
+.menu-drawer__search-theme-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2.6rem; /* Match drawer padding */
+  border-top: 1px solid rgba(var(--color-foreground), 0.08); /* Separator */
+  gap: 1rem;
+}
+
+.menu-drawer__search {
+  flex-grow: 1; /* Allow search to take available space */
+}
+
+/* Override default search modal styles if needed within drawer */
+.menu-drawer__search details-modal[open] .search-modal {
+  /* Example: Adjust position or background if needed */
+}
+
+.menu-drawer__search .search-modal__form {
+  /* Example: Adjust search input style if needed */
+}
+
+.menu-drawer__theme-toggle {
+  flex-shrink: 0; /* Prevent theme toggle from shrinking */
+  /* Ensure it uses the standard icon size */
+}
+
+.menu-drawer__theme-toggle .svg-wrapper {
+   width: 24px;
+   height: 24px;
 }
