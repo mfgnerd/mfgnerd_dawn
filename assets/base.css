@@ -3759,9 +3759,11 @@ html:not([data-theme="dark"]) .header__icon--theme .theme-icon--moon {
 
 /* MFGnerd Header Adjustments */
 
-/* Reset margin for H1 logo specifically on homepage to fix alignment */
+/* Reset margin, padding, and line-height for H1 logo specifically on homepage to fix alignment */
 .template-index h1.header__heading {
   margin: 0;
+  padding: 0; /* Add padding reset */
+  line-height: inherit; /* Inherit line-height from parent or link */
 }
 
 /* Removed max-width override to use default --page-width */
@@ -3778,8 +3780,12 @@ html:not([data-theme="dark"]) .header__icon--theme .theme-icon--moon {
 }
 
 /* Apply dark mode border only to the page-width header element */
+html[data-theme='light'] .header.page-width {
+  border-bottom: 0.1rem solid rgb(var(--mfg-color-border)); /* Use light mode border color */
+}
+
 html[data-theme="dark"] .header.page-width {
-   border-bottom: 0.1rem solid rgb(var(--mfg-color-border));
+   border-bottom: 0.1rem solid rgb(var(--mfg-color-border)); /* Use dark mode border color */
 }
 
 /* Standardize Nav Text Size & Weight */
