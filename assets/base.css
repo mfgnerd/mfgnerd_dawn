@@ -3801,13 +3801,6 @@ html:not([data-theme="dark"]) .header__icon--theme .theme-icon--moon {
 
 /* MFGnerd Header Adjustments */
 
-/* Reset margin, padding, and line-height for H1 logo specifically on homepage to fix alignment */
-.template-index h1.header__heading {
-  margin: 0;
-  padding: 0; /* Add padding reset */
-  line-height: inherit; /* Inherit line-height from parent or link */
-}
-
 /* Removed max-width override to use default --page-width */
 /*
 .header.page-width {
