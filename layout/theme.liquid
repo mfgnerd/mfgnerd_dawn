@@ -8,10 +8,23 @@
     {% comment %} MFGnerd: Add inline script to prevent FOUC {% endcomment %}
     <script>
       (function () {
-        const theme = localStorage.getItem('theme');
-        if (theme) {
-          document.documentElement.setAttribute('data-theme', theme);
+        const storageKey = 'mfgnerd-theme-preference';
+        let theme = 'light'; // Default to light
+        try {
+          const storedTheme = localStorage.getItem(storageKey);
+          if (storedTheme === 'light' || storedTheme === 'dark') {
+            theme = storedTheme;
+          } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            theme = 'dark'; // Use OS preference if no valid stored theme
+          }
+        } catch (e) {
+          console.warn('Could not read theme preference:', e);
+          // Fallback to OS preference even if localStorage read failed
+          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            theme = 'dark';
+          }
         }
+        document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
     {% comment %} End MFGnerd FOUC Fix {% endcomment %}
