@@ -188,6 +188,48 @@ html[data-theme="dark"] {
   padding: 0 1.5rem;
 }
 
+/* Add relative positioning for the pseudo-element */
+.header.page-width {
+  position: relative;
+}
+
+/* Create the border using a pseudo-element */
+.header.page-width::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 0.1rem;
+  left: 1.5rem; /* Default mobile padding from .page-width */
+  right: 1.5rem;
+  background-color: rgb(var(--mfg-color-border)); /* Default color */
+}
+
+@media screen and (min-width: 750px) {
+  /* Apply tablet padding */
+  .header.page-width::after {
+    left: 3.2rem;
+    right: 3.2rem;
+  }
+}
+@media screen and (min-width: 990px) {
+   /* Apply desktop padding */
+   .header.page-width::after {
+     left: 5rem;
+     right: 5rem;
+   }
+   /* Note: This assumes .header.page-width always gets 5rem padding at 990px+.
+      If drawer-menu state changes padding, specific rules might be needed. */
+}
+
+/* Set specific border color based on theme */
+html[data-theme='light'] .header.page-width::after {
+  background-color: rgb(var(--mfg-color-border));
+}
+html[data-theme='dark'] .header.page-width::after {
+  background-color: rgb(var(--mfg-color-border));
+}
+
+
 body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   max-width: 100%;
 }
@@ -3777,15 +3819,6 @@ html:not([data-theme="dark"]) .header__icon--theme .theme-icon--moon {
 
 .header__heading {
   line-height: initial; /* Keep this override */
-}
-
-/* Apply dark mode border only to the page-width header element */
-html[data-theme='light'] .header.page-width {
-  border-bottom: 0.1rem solid rgb(var(--mfg-color-border)); /* Use light mode border color */
-}
-
-html[data-theme="dark"] .header.page-width {
-   border-bottom: 0.1rem solid rgb(var(--mfg-color-border)); /* Use dark mode border color */
 }
 
 /* Standardize Nav Text Size & Weight */
