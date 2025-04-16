@@ -2979,7 +2979,7 @@ details[open] > .header__submenu {
   transition: text-decoration var(--duration-short) ease;
 }
 .header__menu-item:hover span {
-  text-decoration: none; /* Remove underline on hover */
+  /* text-decoration: none; <- Removed to prevent interference with active squiggle */
   /* text-underline-offset: 0.3rem; */ /* No longer needed */
 }
 
@@ -3008,8 +3008,9 @@ details[open] > .header__menu-item .icon-caret {
 /* Ensure active item text AND squiggle change color on hover, and squiggle persists */
 html .header__menu-item:hover.header__active-menu-item { /* Increased specificity and removed redundant selector */
   color: rgb(var(--mfg-color-accent));
+  text-decoration-line: underline; /* Ensure underline persists */
   text-decoration-style: wavy; /* Explicitly keep wavy on hover */
-  text-decoration-color: rgb(var(--mfg-color-accent)); /* Change squiggle color on hover */
+  text-decoration-color: rgb(var(--mfg-color-accent)) !important; /* Change squiggle color on hover - Force it */
   text-decoration-thickness: 0.25rem; /* Keep thickness */
 }
 
