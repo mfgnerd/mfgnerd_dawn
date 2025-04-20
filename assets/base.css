@@ -112,6 +112,15 @@ html[data-theme="dark"] {
   .select__select.facet-filters__sort ~ .svg-wrapper svg {
     fill: currentColor !important;
   }
+  
+/* Specific rule for mobile facets close */
+.mobile-facets__close .svg-wrapper {
+  color: rgb(var(--mfg-color-text-base)) !important; /* Light Grey */
+}
+
+.mobile-facets__close .svg-wrapper svg {
+  fill: currentColor !important;
+}
 
   /* Force correct footer copyright text color in dark mode */
   .footer .copyright__content,
