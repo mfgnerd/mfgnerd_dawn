@@ -107,7 +107,7 @@ html[data-theme="dark"] {
   }
   /* Specific rule for Sort By dropdown */
    .select__select.facet-filters__sort ~ .svg-wrapper .icon-caret {
-     fill: rgb(var(--mfg-color-text-base)) !important; /* Light Grey */
+     color: rgb(var(--mfg-color-text-base)) !important; /* Light Grey */
   }
   .select__select.facet-filters__sort ~ .svg-wrapper svg {
     fill: currentColor !important;
