@@ -163,6 +163,11 @@ html[data-theme="dark"] {
   .facets__price .field-currency {
     color: rgb(var(--mfg-color-text-base)) !important;
   }
+
+  /* Force correct background color for sort by dropdown in facets in dark mode */
+  .facet-filters .select__select {
+    background-color: rgb(var(--mfg-color-fill)) !important;
+  }
 }
 
 /* Apply mobile header layout by default */
