@@ -25,6 +25,23 @@ html[data-theme="light"] {
   .footer .newsletter-form__button {
     color: rgb(var(--mfg-color-text-base)) !important; /* Black */
   }
+
+  /* Force correct select dropdown arrow color in light mode */
+  .footer .newsletter-form__button {
+    color: rgb(var(--mfg-color-text-base)) !important; /* Black */
+  }
+
+  /* Force correct select dropdown arrow color in light mode */
+  .select .icon-caret { /* General rule */
+     fill: rgb(var(--mfg-color-text-base)) !important; /* Black */
+  }
+  /* Specific rule for Sort By dropdown */
+  .select__select.facet-filters__sort ~ .svg-wrapper .icon-caret {
+     fill: rgb(var(--mfg-color-text-base)) !important; /* Black */
+  }
+  .select__select.facet-filters__sort ~ .svg-wrapper svg {
+    fill: currentColor !important;
+  }
 }
 
 html[data-theme="dark"] {
@@ -83,10 +100,17 @@ html[data-theme="dark"] {
   }
 
   /* Force correct icon colors for dark mode */
-  .select .icon-caret, /* Dropdown arrows */
+  .select .icon-caret, /* General dropdown arrows */
   .quantity__button .icon /* Quantity +/- icons */
   {
-     fill: rgb(var(--mfg-color-text-base)) !important;
+     fill: rgb(var(--mfg-color-text-base)) !important; /* Light Grey */
+  }
+  /* Specific rule for Sort By dropdown */
+   .select__select.facet-filters__sort ~ .svg-wrapper .icon-caret {
+     fill: rgb(var(--mfg-color-text-base)) !important; /* Light Grey */
+  }
+  .select__select.facet-filters__sort ~ .svg-wrapper svg {
+    fill: currentColor !important;
   }
 
   /* Force correct footer copyright text color in dark mode */
@@ -98,6 +122,19 @@ html[data-theme="dark"] {
   /* Force correct newsletter button icon color in dark mode */
   .footer .newsletter-form__button {
      color: rgb(var(--mfg-color-text-base)) !important; /* Light Grey */
+  }
+
+  /* Force correct text color for product options in cart notification */
+  .cart-notification-product .product-option {
+    color: rgb(var(--mfg-color-text-base)) !important;
+  }
+
+  /* Force correct text color for cart page elements in dark mode */
+  .cart-items th, /* Headings: Product, Quantity, Total */
+  .cart-item__final-price, /* Product price */
+  .cart-item__details > * /* Product variant title (tentative) */
+  {
+    color: rgb(var(--mfg-color-text-base)) !important;
   }
 }
 
