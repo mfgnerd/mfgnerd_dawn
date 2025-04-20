@@ -136,6 +136,33 @@ html[data-theme="dark"] {
   {
     color: rgb(var(--mfg-color-text-base)) !important;
   }
+
+  /* Force correct text color for select dropdowns in facets in dark mode */
+  .facets .select__select {
+    color: rgb(var(--mfg-color-text-base)) !important;
+  }
+
+  /* Force correct text color for facet dropdown options in dark mode */
+  .facets__display .facet-checkbox__text-label {
+    color: rgb(var(--mfg-color-text-base)) !important;
+  }
+
+  /* Force correct text color for facet header elements in dark mode */
+  .facets__header .facets__selected,
+  .facets__header .facets__reset {
+    color: rgb(var(--mfg-color-text-base)) !important;
+  }
+
+  /* Force correct text color for facet dropdown quantity in dark mode */
+  .facets__display .facet-checkbox__text span,
+  .facets__display .facet-checkbox__text:hover span {
+    color: rgb(var(--mfg-color-text-base)) !important;
+  }
+
+  /* Force correct text color for price range currency in facets in dark mode */
+  .facets__price .field-currency {
+    color: rgb(var(--mfg-color-text-base)) !important;
+  }
 }
 
 /* Apply mobile header layout by default */
