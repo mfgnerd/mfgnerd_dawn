@@ -955,6 +955,7 @@ details.menu-opening .mobile-facets__close .svg-wrapper {
 
 .mobile-facets__summary {
   padding: 1.3rem 2.5rem;
+  color: rgb(var(--color-foreground));
 }
 
 .mobile-facets__summary .svg-wrapper {
@@ -1046,6 +1047,7 @@ input.mobile-facets__checkbox {
 .mobile-facets__summary .icon-caret {
   margin-left: auto;
   display: block;
+  fill: currentColor;
 }
 
 .mobile-facets__footer {
