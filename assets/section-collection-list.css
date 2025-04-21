@@ -1,6 +1,7 @@
 .collection-list {
   margin-top: 0;
   margin-bottom: 0;
+  background-color: rgb(var(--color-fill));
 }
 
 .collection-list-title {

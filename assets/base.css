@@ -179,6 +179,10 @@ html[data-theme="dark"] {
   }
 }
 
+.shopify-section.section {
+  background-color: rgb(var(--color-background));
+}
+
 /* Apply mobile header layout by default */
 .header--mobile-left {
   /* Logo | Icons - Push to edges */
