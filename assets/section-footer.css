@@ -1,14 +1,44 @@
 .footer {
-  border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  /* border-top removed, handled by pseudo-element below */
 }
 
+/* Keep this rule */
 .footer:not(.color-scheme-1) {
   border-top: none;
 }
 
+/* Remove the incorrect ::before rule and positioning from footer__content-top.page-width */
+
+
 .footer__content-top {
+  padding-top: 5rem; /* Added space above content */
   padding-bottom: 5rem;
   display: block;
+  position: relative; /* Needed for pseudo-element */
+}
+
+/* Divider above the main content, respecting page-width */
+.footer__content-top.page-width::before {
+  content: '';
+  position: absolute;
+  top: 0; /* Position at the top edge */
+  height: 0.1rem;
+  left: 1.5rem; /* Default mobile padding */
+  right: 1.5rem;
+  background-color: rgb(var(--mfg-color-border));
+}
+
+@media screen and (min-width: 750px) {
+  .footer__content-top.page-width::before {
+    left: 3.2rem; /* Tablet padding */
+    right: 3.2rem;
+  }
+}
+@media screen and (min-width: 990px) {
+   .footer__content-top.page-width::before {
+     left: 5rem; /* Desktop padding */
+     right: 5rem;
+   }
 }
 
 @media screen and (max-width: 749px) {
@@ -40,40 +70,24 @@
   }
 }
 
+/* Remove the incorrect grid ::before rule */
+
+
 .footer__content-bottom {
-  border-top: solid 0.1rem rgba(var(--color-foreground), 0.08);
+  /* border-top removed, handled by pseudo-element below */
   padding-top: 3rem;
+  position: relative; /* Keep relative positioning for the lower divider */
 }
 
 .footer__content-bottom:only-child {
-  border-top: 0;
+  border-top: 0; /* Keep this rule */
 }
+
+.footer__content-bottom-wrapper.page-width {
+}
+
 
 .footer__content-bottom-wrapper {
-  display: flex;
-  width: 100%;
-}
-
-@media screen and (max-width: 749px) {
-  .footer__content-bottom {
-    flex-wrap: wrap;
-    padding-top: 0;
-    padding-left: 0;
-    padding-right: 0;
-    row-gap: 1.5rem;
-  }
-
-  .footer__content-bottom-wrapper {
-    flex-wrap: wrap;
-    row-gap: 1.5rem;
-    justify-content: center;
-  }
-
-  .footer__content-bottom.scroll-trigger.animate--slide-in {
-    animation: none;
-    opacity: 1;
-    transform: inherit;
-  }
 }
 
 .footer__localization:empty + .footer__column--info {
