@@ -12,6 +12,11 @@
   }
 }
 
+/* Apply theme background to the main login section container */
+#shopify-section-template--18560180748457__main {
+  background-color: rgb(var(--color-background));
+}
+
 .customer > h1,
 .customer__title {
   margin-top: 0;
