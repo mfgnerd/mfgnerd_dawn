@@ -187,7 +187,7 @@ html[data-theme="dark"] {
   }
 }
 
-.shopify-section.section {
+.shopify-section.section, body {
   background-color: rgb(var(--color-background));
 }
 
