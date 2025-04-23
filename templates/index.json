@@ -55,8 +55,9 @@
         "button"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "medium",
+        "image": "shopify://shop_images/hydrosnap_background.png",
+        "image_overlay_opacity": 50,
+        "image_height": "large",
         "image_behavior": "none",
         "desktop_content_position": "bottom-center",
         "desktop_content_alignment": "center",
