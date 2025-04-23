@@ -4111,3 +4111,20 @@ html:not([data-theme="dark"]) .header__icon--theme .theme-icon--moon {
   max-width: 768px;
   margin: 0 auto;
 }
+
+/* MFGnerd Footer Policy Links */
+.footer__policy-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 0; /* Remove padding */
+}
+
+.footer__policy-link-item {
+  width: 33.33%;
+  padding: 0.2em;
+  text-align: center;
+}
+
+.footer__content-bottom {
+}

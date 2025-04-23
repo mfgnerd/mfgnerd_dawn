@@ -11,8 +11,8 @@
 
 
 .footer__content-top {
-  padding-top: 5rem; /* Added space above content */
-  padding-bottom: 5rem;
+  padding-top: 2rem; /* Added space above content */
+  padding-bottom: 2rem;
   display: block;
   position: relative; /* Needed for pseudo-element */
 }
@@ -75,7 +75,6 @@
 
 .footer__content-bottom {
   /* border-top removed, handled by pseudo-element below */
-  padding-top: 3rem;
   position: relative; /* Keep relative positioning for the lower divider */
 }
 
@@ -475,21 +474,26 @@
   align-items: center;
 }
 
-.policies li::before {
-  content: '\00B7';
-  padding: 0 0.8rem;
+.footer__policy-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 40%;
+  margin: 0 auto;
 }
 
-.policies li a {
-  padding: 0.6rem 0;
-  display: block;
+.footer__policy-link-item {
+  width: 33.33%;
+  padding: 0.2em;
+  text-align: center;
 }
 
-@media screen and (min-width: 750px) {
-  .policies li a {
-    padding: 0;
+@media screen and (max-width: 749px) {
+  .footer__policy-link-item {
+    width: 100%;
   }
 }
+
 @keyframes animateLocalization {
   0% {
     opacity: 0;
