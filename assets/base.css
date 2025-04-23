@@ -42,6 +42,14 @@ html[data-theme="light"] {
   .select__select.facet-filters__sort ~ .svg-wrapper svg {
     fill: currentColor !important;
   }
+
+  /* Force white text color for banner text in light mode */
+  .banner__content .banner__heading,
+  .banner__content .banner__text,
+  .banner__content .rte,
+  .banner__content .body {
+    color: white !important;
+  }
 }
 
 html[data-theme="dark"] {
