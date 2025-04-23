@@ -4105,3 +4105,9 @@ html:not([data-theme="dark"]) .header__icon--theme .theme-icon--moon {
   z-index: -1; /* Place behind the text */
   backdrop-filter: blur(10px); /* Apply the blur effect */
 }
+
+/* MFGnerd Policy Page Width */
+.shopify-policy__container {
+  max-width: 768px;
+  margin: 0 auto;
+}
