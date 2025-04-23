@@ -15,14 +15,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "<strong>Welcome to the MFGnerd shop!</strong>",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Here you'll find a curated collection of products designed and built by yours truly. From HydroSnap hydroponics gear to (soon!) van conversion essentials, I'm passionate about creating innovative solutions for everyday problems. Thanks for stopping by, and happy building!</p>"
           }
         }
       },
