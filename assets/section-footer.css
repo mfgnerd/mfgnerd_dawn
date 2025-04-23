@@ -317,11 +317,11 @@
 @keyframes appear-down {
   0% {
     opacity: 0;
-    margin-top: -1rem;
+    transform: translateY(0);
   }
   100% {
     opacity: 1;
-    margin-top: 0;
+    transform: translateY(-1rem);
   }
 }
 
@@ -489,6 +489,9 @@
 }
 
 @media screen and (max-width: 749px) {
+  .footer__policy-links {
+    padding-top: 1rem;
+  }
   .footer__policy-link-item {
     width: 100%;
   }
