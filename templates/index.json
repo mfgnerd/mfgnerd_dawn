@@ -55,8 +55,8 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/hydrosnap_background.png",
-        "image_overlay_opacity": 50,
+        "image": "shopify://shop_images/hydrosnap_background2.png",
+        "image_overlay_opacity": 60,
         "image_height": "large",
         "image_behavior": "none",
         "desktop_content_position": "bottom-center",
