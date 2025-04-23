@@ -52,7 +52,7 @@
 *   **Header Font Size:** Verified.
 *   **Header Width/Border Alignment:** Verified.
 *   **Header Icon Hover Color:** Refined CSS with specific selectors. *(Needs verification)*
-*   **Global Color Application:** Theme toggle doesn't change colors globally (likely due to Shopify color schemes overriding base styles).
+*   **Global Color Application:** Theme toggle doesn't change colors globally. Modified `assets/customer.css` to target `#shopify-section-template--18560002457769__main` and added a rule for `#MainContent` to apply the theme background color.
 *   **Nav Text Size:** Discrepancy in navigation text sizes between the two sites. *(Needs further adjustment)*
 *   **Dark Mode Text Color (Other Elements):** Verified.
 *   **Dark Mode Icon Color:** Verified.

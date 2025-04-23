@@ -13,7 +13,13 @@
 }
 
 /* Apply theme background to the main login section container */
-#shopify-section-template--18560180748457__main {
+/* Apply theme background to the main login section container */
+#shopify-section-template--18560002457769__main {
+  background-color: rgb(var(--color-background));
+}
+
+/* Apply theme background to the main content */
+#MainContent {
   background-color: rgb(var(--color-background));
 }
 
