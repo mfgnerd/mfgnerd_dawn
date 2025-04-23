@@ -4087,3 +4087,21 @@ html:not([data-theme="dark"]) .header__icon--theme .theme-icon--moon {
    width: 24px;
    height: 24px;
 }
+
+.banner__text {
+  position: relative; /* Create a stacking context */
+  display: inline-block; /* Shrink-wrap the content */
+}
+
+.banner__text::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem; /* Adjust as needed */
+  right: 2.5rem; /* Adjust as needed */
+  bottom: -0.5rem; /* Adjust as needed */
+  left: 2.5rem; /* Adjust as needed */
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black */
+  border-radius: 0.5rem; /* Optional: Add rounded corners */
+  z-index: -1; /* Place behind the text */
+  backdrop-filter: blur(10px); /* Apply the blur effect */
+}
