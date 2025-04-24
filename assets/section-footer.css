@@ -57,7 +57,7 @@
   }
 
   .footer__content-top {
-    padding-bottom: 3rem;
+    padding-bottom: 0rem;
     padding-left: calc(4rem / var(--font-body-scale));
     padding-right: calc(4rem / var(--font-body-scale));
   }
@@ -319,6 +319,7 @@
     opacity: 0;
     transform: translateY(0);
   }
+
   100% {
     opacity: 1;
     transform: translateY(-1rem);
