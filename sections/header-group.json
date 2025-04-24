@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "Free shipping on orders over $100 in Canada and $75 in the USA.",
             "link": ""
           }
         }
