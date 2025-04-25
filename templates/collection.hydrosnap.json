@@ -157,6 +157,7 @@
         "enable_video_looping": true,
         "video": "shopify://files/videos/Hydrosnap_full_720.mp4",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "cover_image": "shopify://shop_images/563db8a7-il_fullxfull.6685843092_vxgg.jpg",
         "description": "",
         "full_width": false,
         "color_scheme": "",
