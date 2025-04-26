@@ -138,37 +138,15 @@
     "rich_text_ftrxw3": {
       "type": "rich-text",
       "blocks": {
-        "heading_aFXU9b": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
         "text_UTNHp6": {
           "type": "text",
           "settings": {
             "text": "{{ product.description }}"
           }
-        },
-        "button_FeGzNW": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
         }
       },
       "block_order": [
-        "heading_aFXU9b",
-        "text_UTNHp6",
-        "button_FeGzNW"
+        "text_UTNHp6"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
@@ -176,44 +154,6 @@
         "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "image-with-text": {
-      "type": "image-with-text",
-      "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
-          }
-        },
-        "image-with-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "image-with-text-0",
-        "image-with-text-1"
-      ],
-      "disabled": true,
-      "settings": {
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "color_scheme": "scheme-2",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -240,7 +180,6 @@
   "order": [
     "main",
     "rich_text_ftrxw3",
-    "image-with-text",
     "related-products"
   ]
 }
