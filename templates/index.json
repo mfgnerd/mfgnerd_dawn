@@ -40,7 +40,7 @@
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Explore the System",
+            "button_label_1": "Explore HydroSnap",
             "button_link_1": "shopify://collections/hydrosnap",
             "button_style_secondary_1": false,
             "button_label_2": "",
