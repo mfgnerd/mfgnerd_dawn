@@ -4014,6 +4014,360 @@ html:not([data-theme="dark"]) .header__icon--theme .theme-icon--moon {
   padding-left: 1rem; /* Add some spacing */
   padding-right: 1rem;
 }
+/* Styles for the cookie banner */
+#shopify-pc__banner {
+  background-color: rgb(var(--mfg-color-fill));
+  color: rgb(var(--mfg-color-text-base));
+  /* Add padding and other basic styling as needed */
+  /* padding: 1.5rem; /* Example padding */
+  border-radius: 0; /* Remove border radius for full width */
+  box-shadow: 0 -0.5rem 1rem rgba(0, 0, 0, 0.2); /* Adjust shadow for bottom position */
+  position: fixed; /* Or absolute, depending on desired behavior */
+  bottom: 0; /* Position at the very bottom */
+  left: 0; /* Span full width */
+  right: 0; /* Span full width */
+  width: 100%; /* Ensure full width */
+  z-index: 100; /* Ensure it's above other content */
+  /* Remove max-width and margin for full width */
+  /* max-width: 40rem; */
+  /* margin: auto; */
+  padding: 1.5rem 2rem; /* Add padding on sides and top/bottom */
+}
+
+/* Dark theme styles for the cookie banner */
+html[data-theme="dark"] #shopify-pc__banner {
+  background-color: rgb(var(--mfg-color-fill));
+  color: rgb(var(--mfg-color-text-base));
+}
+
+/* Styles for text elements within the banner */
+#shopify-pc__banner h2,
+#shopify-pc__banner p {
+  color: inherit; /* Inherit color from the parent banner */
+  margin-top: 0; /* Remove default margin */
+  margin-bottom: 1rem; /* Add some space below text */
+}
+
+#shopify-pc__banner p:last-child {
+  margin-bottom: 0; /* Remove bottom margin for the last paragraph */
+}
+
+/* Styles for the buttons container */
+.shopify-pc__banner__btns {
+  margin-top: 1.5rem; /* Space above buttons */
+  /* Remove flexbox to allow default button display */
+  /* display: flex; */
+  /* gap: 1rem; */
+  /* flex-wrap: wrap; */
+}
+
+/* Styles for individual buttons */
+#shopify-pc__banner button {
+  /* Inherit button styles from the theme or define specific ones */
+  /* Example: */
+  padding: 1rem 1.5rem;
+  border: 1px solid rgb(var(--mfg-color-accent));
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  /* Ensure buttons are inline-block for side-by-side layout */
+  display: inline-block;
+  margin-right: 1rem; /* Add space between buttons */
+  margin-bottom: 1rem; /* Add space below buttons for wrapping */
+}
+
+/* Style for the "Manage preferences" button to look like a link */
+#shopify-pc__banner__btn-manage-prefs {
+  background-color: transparent;
+  color: rgb(var(--mfg-color-text-base));
+  border: none; /* Remove border */
+  text-decoration: underline; /* Add underline */
+  padding: 0; /* Remove padding */
+  margin-right: 0; /* Remove right margin */
+  margin-bottom: 1rem; /* Add space below */
+  display: block; /* Make it a block element to appear on its own line */
+  text-align: center; /* Center the link */
+}
+
+html[data-theme="dark"] #shopify-pc__banner__btn-manage-prefs {
+  color: rgb(var(--mfg-color-text-base));
+}
+
+/* Style for the "Accept" button */
+#shopify-pc__banner__btn-accept {
+  background-color: rgb(var(--mfg-color-accent));
+  color: rgb(var(--mfg-color-fill)); /* Use fill color for text on accent background */
+  border-color: rgb(var(--mfg-color-accent)); /* Ensure border color matches background */
+}
+
+html[data-theme="dark"] #shopify-pc__banner__btn-accept {
+  background-color: rgb(var(--mfg-color-accent));
+  color: rgb(var(--mfg-color-text-base)); /* Use text-base color for text on accent background in dark mode */
+  border-color: rgb(var(--mfg-color-accent)); /* Ensure border color matches background */
+}
+
+/* Style for the "Decline" button */
+#shopify-pc__banner__btn-decline {
+  background-color: transparent;
+  color: rgb(var(--mfg-color-text-base));
+  border-color: rgb(var(--mfg-color-text-base));
+}
+
+html[data-theme="dark"] #shopify-pc__banner__btn-decline {
+  color: rgb(var(--mfg-color-text-base));
+  border-color: rgb(var(--mfg-color-text-base));
+}
+
+/* Adjust link color within the text */
+#shopify-pc__banner a {
+  color: rgb(var(--mfg-color-accent));
+  text-decoration: underline;
+}
+
+html[data-theme="dark"] #shopify-pc__banner a {
+  color: rgb(var(--mfg-color-accent));
+}
+
+/* End Styles for the cookie banner */
+
+/* Styles for the Manage Cookie Preferences dialog */
+#shopify-pc__prefs__dialog {
+  background-color: rgb(var(--mfg-color-fill));
+  color: rgb(var(--mfg-color-text-base));
+}
+
+html[data-theme="dark"] #shopify-pc__prefs__dialog {
+  background-color: rgb(var(--mfg-color-fill));
+  color: rgb(var(--mfg-color-text-base));
+}
+
+/* Styles for the header */
+#shopify-pc__prefs__dialog header {
+  border-bottom: 1px solid rgb(var(--mfg-color-border)); /* Add a border */
+}
+
+html[data-theme="dark"] #shopify-pc__prefs__dialog header {
+  border-bottom-color: rgb(var(--mfg-color-border));
+}
+
+/* Style for the close button */
+#shopify-pc__prefs__header-close {
+  color: rgb(var(--mfg-color-text-base)); /* Use text color for the icon */
+}
+
+html[data-theme="dark"] #shopify-pc__prefs__header-close {
+   color: rgb(var(--mfg-color-text-base));
+}
+
+#shopify-pc__prefs__header-close svg path {
+    fill: currentColor; /* Ensure SVG path inherits color */
+}
+
+
+/* Style for the title */
+#shopify-pc__prefs__header-title {
+  color: rgb(var(--mfg-color-text-base));
+}
+
+html[data-theme="dark"] #shopify-pc__prefs__header-title {
+  color: rgb(var(--mfg-color-text-base));
+}
+
+/* Styles for header action buttons container */
+.shopify-pc__prefs__header-actions {
+  /* Keep default layout */
+}
+
+/* Styles for header action buttons */
+.shopify-pc__prefs__header-actions button {
+  /* Keep default button styling, only override colors */
+  background-color: transparent;
+  color: rgb(var(--mfg-color-text-base));
+}
+
+#shopify-pc__prefs__header-accept {
+  background-color: rgb(var(--mfg-color-accent));
+  color: rgb(var(--mfg-color-fill)); /* Use fill color for text on accent background */
+  border-color: rgb(var(--mfg-color-accent));
+}
+
+html[data-theme="dark"] #shopify-pc__prefs__header-accept {
+  background-color: rgb(var(--mfg-color-accent));
+  color: rgb(var(--mfg-color-text-base)); /* Use text-base color for text on accent background in dark mode */
+  border-color: rgb(var(--mfg-color-accent));
+}
+
+#shopify-pc__prefs__header-decline {
+  background-color: transparent;
+  color: rgb(var(--mfg-color-text-base));
+  border-color: rgb(var(--mfg-color-text-base));
+}
+
+html[data-theme="dark"] #shopify-pc__prefs__header-decline {
+  color: rgb(var(--mfg-color-text-base));
+  border-color: rgb(var(--mfg-color-text-base));
+}
+
+#shopify-pc__prefs__header-save {
+    background-color: rgb(var(--mfg-color-accent));
+    color: rgb(var(--mfg-color-fill)); /* Use fill color for text on accent background */
+    border-color: rgb(var(--mfg-color-accent));
+}
+
+html[data-theme="dark"] #shopify-pc__prefs__header-save {
+    background-color: rgb(var(--mfg-color-accent));
+    color: rgb(var(--mfg-color-text-base)); /* Use text-base color for text on accent background in dark mode */
+    border-color: rgb(var(--mfg-color-accent));
+}
+
+html[data-theme="dark"] .shopify-pc__prefs__header-actions button {
+  color: rgb(var(--mfg-color-text-base));
+  border-color: rgb(var(--mfg-color-text-base));
+}
+
+
+/* Styles for the scrollable content area */
+.shopify-pc__prefs__scrollable {
+  /* Keep default styling */
+}
+
+/* Styles for the intro section */
+.shopify-pc__prefs__intro {
+  /* Keep default styling */
+}
+
+.shopify-pc__prefs__intro h3 {
+  color: rgb(var(--mfg-color-text-base)); /* Explicitly set color to theme text color */
+}
+
+html[data-theme="dark"] .shopify-pc__prefs__intro h3 {
+  color: rgb(var(--mfg-color-text-base)); /* Ensure it's theme-aware in dark mode */
+}
+
+.shopify-pc__prefs__intro p {
+  color: inherit; /* Inherit color from the dialog */
+}
+
+/* Styles for cookie options container */
+.shopify-pc__prefs__options {
+  /* Keep default styling */
+}
+
+/* Styles for individual cookie option */
+.shopify-pc__prefs__option {
+  border: 1px solid rgb(var(--mfg-color-border));
+  background-color: rgb(var(--mfg-color-fill)); /* Use fill color for options */
+}
+
+html[data-theme="dark"] .shopify-pc__prefs__option {
+  border-color: rgb(var(--mfg-color-accent)); /* Use accent color for border in dark mode */
+  background-color: rgb(var(--mfg-color-fill)); /* Use fill color for options */
+}
+
+.shopify-pc__prefs__option label {
+  color: rgb(var(--mfg-color-text-base)); /* Use text color for label */
+}
+
+html[data-theme="dark"] .shopify-pc__prefs__option label {
+  color: rgb(var(--mfg-color-text-base));
+}
+
+.shopify-pc__prefs__option input[type="checkbox"] {
+  /* Hide default checkbox */
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Style the custom checkbox icon container */
+.shopify-pc__prefs__option label span[aria-hidden="true"] {
+    display: inline-block;
+    width: 24px; /* Match SVG size */
+    height: 24px; /* Match SVG size */
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+    background-color: transparent; /* Ensure no background on the span */
+}
+
+/* Ensure SVG is visible within the container */
+.shopify-pc__prefs__option label svg {
+    display: block !important;
+}
+
+/* Style the SVG paths based on checked state and theme */
+.shopify-pc__prefs__option label svg path {
+    fill: rgb(var(--mfg-color-text-base)); /* Default icon color (text color) */
+}
+
+/* Checked icon color in light mode (black) */
+html:not([data-theme="dark"]) .shopify-pc__prefs__option input[type="checkbox"]:checked ~ span[aria-hidden="true"] svg[data-icon-type="checked"] path {
+    fill: rgb(var(--mfg-color-text-base)); /* Black in light mode */
+}
+
+/* Checked icon color in dark mode (white) */
+html[data-theme="dark"] .shopify-pc__prefs__option input[type="checkbox"]:checked ~ span[aria-hidden="true"] svg[data-icon-type="checked"] path {
+    fill: rgb(var(--mfg-color-fill)); /* White in dark mode */
+}
+
+/* Unchecked icon color (text color) */
+.shopify-pc__prefs__option input[type="checkbox"]:not(:checked) ~ span[aria-hidden="true"] svg[data-icon-type="unchecked"] path {
+    fill: rgb(var(--mfg-color-text-base)); /* Text color in both modes */
+}
+
+/* Show checked icon when input is checked */
+.shopify-pc__prefs__option input[type="checkbox"]:checked ~ span[aria-hidden="true"] svg[data-icon-type="checked"] {
+    display: block !important;
+}
+
+/* Hide unchecked icon when input is checked */
+.shopify-pc__prefs__option input[type="checkbox"]:checked ~ span[aria-hidden="true"] svg[data-icon-type="unchecked"] {
+    display: none !important;
+}
+
+/* Hide checked icon when input is not checked */
+.shopify-pc__prefs__option input[type="checkbox"]:not(:checked) ~ span[aria-hidden="true"] svg[data-icon-type="checked"] {
+    display: none !important;
+}
+
+/* Show unchecked icon when input is not checked */
+.shopify-pc__prefs__option input[type="checkbox"]:not(:checked) ~ span[aria-hidden="true"] svg[data-icon-type="unchecked"] {
+    display: block !important;
+}
+
+
+.shopify-pc__prefs__option p {
+  color: inherit; /* Inherit color from the option container */
+}
+
+/* End Styles for the Manage Cookie Preferences dialog */
+
+/* MFGnerd Header Adjustments */
+
+/* Removed max-width override to use default --page-width */
+/*
+.header.page-width {
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+*/
+
+.header__heading {
+  line-height: initial; /* Keep this override */
+}
+
+/* Standardize Nav Text Size & Weight */
+.header__menu-item {
+  font-size: 1.7rem; /* Further increased size */
+  font-weight: 600; /* Make nav links bolder */
+}
+
+/* Ensure nav items display inline */
+.header__inline-menu .list-menu--inline > .list-menu__item {
+  /* display: inline-block; <- Removed to allow flex layout */
+  padding-left: 1rem; /* Add some spacing */
+  padding-right: 1rem;
+}
 /* End MFGnerd Header Adjustments */
 
 /* MFGnerd Logo Font Weight */

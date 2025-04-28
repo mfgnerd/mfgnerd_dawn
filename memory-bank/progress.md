@@ -1,8 +1,8 @@
 T# Progress: MFGnerd Shopify Store Customization
 
-## 1. Current Status (Header & Theme Refinement)
+## 1. Current Status (Header & Theme Refinement, Cookie Popups)
 
-*   **Overall:** Initial theme customization implemented. Refinements ongoing based on feedback, focusing on header layout/styling and theme consistency.
+*   **Overall:** Initial theme customization implemented. Refinements ongoing based on feedback, focusing on header layout/styling and theme consistency. Cookie popup theme styling addressed based on user feedback.
 *   **Theme:** Dawn theme with modifications in `assets/base.css`, `layout/theme.liquid`, `sections/header.liquid`.
 
 ## 2. What Works
@@ -17,6 +17,8 @@ T# Progress: MFGnerd Shopify Store Customization
 *   **Header Layout:** Desktop grid adjusted (`auto 1fr auto`) to push icons right.
 *   "MFGnerd" text logo displayed in header.
 *   "Blog" link displayed in header (desktop).
+*   **Initial Cookie Banner Theme Styling:** Background, text, and button colors are theme-aware. Button layout matches original design.
+*   **Manage Cookie Preferences Dialog Theme Styling:** Background, text, and relevant element colors are theme-aware. Checkbox icons are theme-aware with sufficient contrast. H3 title color updates with theme. Option box borders use theme border color in light mode and accent color in dark mode.
 
 ## 3. What's Left to Build / Refine (High-Level To-Do)
 
@@ -53,24 +55,19 @@ T# Progress: MFGnerd Shopify Store Customization
 *   **[ ] Testing:**
     *   [X] Initial theme toggle functionality tested.
     *   [X] FOUC fixed.
+    *   [X] Cookie popup theme styling implemented and refined based on feedback.
     *   [ ] Verify visual consistency across different page types (homepage, product, collection, cart).
     *   [ ] Test theme toggle functionality thoroughly after refinements.
     *   [ ] Test responsiveness.
 
 ## 4. Known Issues / Feedback (Current)
 
-*   **Stacked Navigation:** Fixed.
 *   **Homepage Logo Alignment:** Specific CSS added for `.template-index`. *(Needs verification)*
-*   **Header Width/Border Alignment:** Verified.
-*   **Global Color Application:** Theme toggle doesn't apply colors globally due to Shopify color scheme overrides.
-*   **Header Font Color:** Verified.
 *   **Active Nav Style:** Wavy underline. *(Needs verification)*
 *   **Nav Hover Style:** Accent color, no underline, active squiggle persists. *(Needs verification)*
-*   **Header Font Size:** Verified.
 *   **Header Icon Hover Color:** Refined CSS with specific selectors. *(Needs verification)*
+*   **Global Color Application:** Theme toggle doesn't apply colors globally due to Shopify color scheme overrides.
 *   **Nav Text Size:** Inconsistent with Astro site. *(Needs further adjustment)*
-*   **Dark Mode Text Color (Other Elements):** Verified.
-*   **Dark Mode Icon Color:** Verified.
 
 ## 5. Decisions Log
 
@@ -97,3 +94,23 @@ T# Progress: MFGnerd Shopify Store Customization
 *   **Decision:** Add `.template-index` prefix to `h1.header__heading { margin: 0; }` rule in `assets/base.css` to specifically target homepage logo alignment.
 *   **Decision:** Add CSS rules to `assets/base.css` to set hover color to accent for `.header__icons > *` and ensure SVG `fill` inherits `currentColor` for icon hover effect. *(Refined)*
 *   **Decision:** Refine CSS selectors for header icon hover effect in `assets/base.css` to specifically target `a.header__icon`, `details-modal > details > summary.header__icon`, and `button.header__icon--theme`.
+*   **Decision:** Implement theme styling for the initial cookie banner (`#shopify-pc__banner`) including background, text, and button colors, and adjust button layout.
+*   **Decision:** Implement theme styling for the "Manage cookie preferences" dialog (`#shopify-pc__prefs__dialog`) including background, text, and relevant element colors. Ensure a single background color (fill color) for the entire dialog. Style checkbox icons to be theme-aware with sufficient contrast in dark mode. Set option box borders to use theme border color in light mode and accent color in dark mode. Explicitly set H3 color in intro section to theme text color.
+
+## 6. Learnings & Insights
+
+*   Shopify's color scheme system requires careful handling when applying global theme changes. Overrides might need to target scheme-specific classes or use higher specificity.
+*   Directly styling `body` might not be sufficient due to section-specific styles.
+*   Inline scripts in `<head>` are necessary to prevent FOUC with client-side theme switching.
+*   CSS Grid and Flexbox interactions within the header require careful adjustment to achieve the desired layout.
+*   `replace_in_file` can be unreliable when multiple failures/reverts occur; `write_to_file` is a necessary fallback.
+*   Flex item display properties (`inline-block`) can conflict with parent flex container rules (`inline-flex`).
+*   Targeting SVGs directly for `fill` might not work if they use `fill="currentColor"`. Instead, set the `color` property of the parent element (e.g., the button).
+*   Homepage-specific elements (like `h1` for the logo) might require targeted CSS rules to override default browser styles or theme styles applied only on that page type.
+*   Active navigation link styles can be modified using the `.header__active-menu-item` class and CSS text-decoration properties. Need to ensure hover rules don't override the active style unintentionally, and avoid theme-specific overrides if the general rule suffices.
+*   Navigation link hover effects are controlled by the `.header__menu-item:hover` and `.header__menu-item:hover span` rules.
+*   Homepage-specific CSS might require prefixing selectors with `.template-index` for higher specificity.
+*   Styling icon hover effects often involves setting the `color` on the parent container (`<a>` or `<button>`) and ensuring the SVG uses `fill="currentColor"`.
+*   Styling custom checkbox icons requires hiding the default input and explicitly styling the icon element (like an SVG) based on the checked state and theme for consistent appearance and contrast.
+*   Conflicting CSS rules from the base theme can override custom styles, requiring more specific selectors or `!important` (used as a last resort).
+*   Carefully review user feedback and provided images to understand the exact desired appearance and identify any unintended layout or styling changes introduced by CSS modifications.

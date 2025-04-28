@@ -1,4 +1,4 @@
-# Active Context: MFGnerd Shopify Store Customization (Header & Theme Refinement)
+# Active Context: MFGnerd Shopify Store Customization (Header & Theme Refinement, Cookie Popups)
 
 ## 1. Current Focus
 
@@ -39,23 +39,17 @@
     *   **Nav Hover Style:** Removed default underline. Set hover color to `rgb(var(--mfg-color-accent))` for `.header__menu-item:hover`. Active item squiggle persists and changes color to accent on hover (removed redundant hover rule). *(Needs verification)*
     *   **Header Font Size:** Increased size for `.header__heading-link` (to `2.4rem`) and `.header__menu-item` (to `1.7rem`). *(Verified)*
     *   **Header Icon Hover Color:** Refined CSS rules in `assets/base.css` with specific selectors for `a.header__icon`, `details-modal > details > summary.header__icon`, and `button.header__icon--theme` to set hover color to accent and ensure SVG `fill` inherits `currentColor`. *(Fixed, needs verification)*
+    *   **Cookie Banner Theme Styling:** Added CSS rules to `assets/base.css` to apply theme-aware background and text colors to the initial cookie banner (`#shopify-pc__banner`). Adjusted button layout to match original design (link for "Manage preferences", side-by-side buttons for "Accept" and "Decline").
+    *   **Manage Cookie Preferences Dialog Theme Styling:** Added CSS rules to `assets/base.css` to apply theme-aware background and text colors to the preferences dialog (`#shopify-pc__prefs__dialog`). Ensured a single background color (fill color) for the entire dialog. Styled checkbox icons to be theme-aware with sufficient contrast in dark mode (white on dark background). Set option box borders to use the theme's border color in light mode and accent color in dark mode as requested. Explicitly set H3 color in intro section to theme text color.
 
 ## 3. Feedback / Issues to Address (Consolidated)
 
-*   **Stacked Navigation:** Fixed.
 *   **Homepage Logo Alignment:** Specific CSS added for `.template-index`. *(Needs verification)*
-*   **Theme Toggle Size:** Verified.
-*   **Header Font Weight:** Verified.
-*   **Header Font Color:** Verified.
 *   **Active Nav Style:** Wavy underline. *(Needs verification)*
 *   **Nav Hover Style:** Accent color, no underline, active squiggle persists. *(Needs verification)*
-*   **Header Font Size:** Verified.
-*   **Header Width/Border Alignment:** Verified.
 *   **Header Icon Hover Color:** Refined CSS with specific selectors. *(Needs verification)*
 *   **Global Color Application:** Theme toggle doesn't change colors globally. Modified `assets/customer.css` to target `#shopify-section-template--18560002457769__main` and added a rule for `#MainContent` to apply the theme background color.
-*   **Nav Text Size:** Discrepancy in navigation text sizes between the two sites. *(Needs further adjustment)*
-*   **Dark Mode Text Color (Other Elements):** Verified.
-*   **Dark Mode Icon Color:** Verified.
+*   **Nav Text Size:** Inconsistent with Astro site. *(Needs further adjustment)*
 *   **Footer Adjustments:** Needs styling for consistency and potential "Store" link.
 *   **General Styling:** Review inputs, cards, spacing.
 *   **Mobile Menu:** Add "Blog" link (via Shopify Navigation).
@@ -90,3 +84,5 @@
 *   Navigation link hover effects are controlled by the `.header__menu-item:hover` and `.header__menu-item:hover span` rules.
 *   Homepage-specific CSS might require prefixing selectors with `.template-index` for higher specificity.
 *   Styling icon hover effects often involves setting the `color` on the parent container (`<a>` or `<button>`) and ensuring the SVG uses `fill="currentColor"`.
+*   Styling custom checkbox icons requires hiding the default input and explicitly styling the icon element (like an SVG) based on the checked state and theme for consistent appearance and contrast.
+*   Conflicting CSS rules from the base theme can override custom styles, requiring more specific selectors or `!important` (used as a last resort).
