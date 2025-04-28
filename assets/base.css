@@ -4460,6 +4460,13 @@ html[data-theme="dark"] .shopify-pc__prefs__option input[type="checkbox"]:checke
   backdrop-filter: blur(10px); /* Apply the blur effect */
 }
 
+@media screen and (max-width: 749px) {
+  .banner__text::before {
+    left: 0.5rem; /* Adjust as needed for mobile */
+    right: 0.5rem; /* Adjust as needed for mobile */
+  }
+}
+
 /* MFGnerd Policy Page Width */
 .shopify-policy__container {
   max-width: 768px;
