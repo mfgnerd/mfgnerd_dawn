@@ -4489,3 +4489,263 @@ html[data-theme="dark"] .shopify-pc__prefs__option input[type="checkbox"]:checke
 
 .footer__content-bottom {
 }
+
+/* MFGnerd Judge.me Carousel Custom Styles */
+.jdgm-carousel-wrapper {
+  /* Apply theme background and border */
+  background-color: rgb(var(--mfg-color-fill));
+  /* Removed border as per user feedback */
+  padding: 2rem; /* Add some padding */
+  border-radius: var(--card-corner-radius); /* Use theme card radius if available, otherwise a default */
+}
+
+html[data-theme="dark"] .jdgm-carousel-wrapper {
+  background-color: rgb(var(--mfg-color-fill));
+  /* Removed border-color as per user feedback */
+}
+
+.jdgm-carousel-title {
+  /* Apply theme text color to the title */
+  color: rgb(var(--mfg-color-text-base));
+}
+
+html[data-theme="dark"] .jdgm-carousel-title {
+  color: rgb(var(--mfg-color-text-base));
+}
+
+.jdgm-carousel-item {
+  /* Apply theme card background and border to individual review items */
+  /* Removed background-color and border as per user feedback */
+  padding: 1.5rem; /* Add some padding */
+  border-radius: var(--card-corner-radius); /* Use theme card radius if available, otherwise a default */
+}
+
+html[data-theme="dark"] .jdgm-carousel-item {
+  /* Removed background-color and border as per user feedback */
+}
+
+.jdgm-carousel-item__review-content p {
+  /* Apply theme text color to review content paragraphs */
+  color: rgb(var(--mfg-color-text-base));
+}
+
+html[data-theme="dark"] .jdgm-carousel-item__review-content p {
+  color: rgb(var(--mfg-color-text-base));
+}
+
+.jdgm-carousel-item__reviewer-name {
+  /* Apply theme text color to reviewer name */
+  color: rgb(var(--mfg-color-text-base));
+}
+
+html[data-theme="dark"] .jdgm-carousel-item__reviewer-name {
+  color: rgb(var(--mfg-color-text-base));
+}
+
+/* Style for the "from X reviews" text */
+.jdgm-carousel-number-of-reviews {
+    color: rgb(var(--mfg-color-text-base));
+}
+
+html[data-theme="dark"] .jdgm-carousel-number-of-reviews {
+    color: rgb(var(--mfg-color-text-base));
+}
+
+/* Style for the star icons */
+.jdgm-all-reviews-rating .jdgm-star:before,
+.jdgm-carousel-item__review-rating .jdgm-star:before {
+    /* Use accent color for filled stars */
+    color: rgb(var(--mfg-color-accent));
+}
+
+/* Style for the verified icon SVG */
+.jdgm-all-reviews-rating-wrapper svg path {
+    fill: rgb(var(--mfg-color-accent)); /* Use accent color for the verified icon */
+}
+
+html[data-theme="dark"] .jdgm-all-reviews-rating-wrapper svg path {
+    fill: rgb(var(--mfg-color-accent)); /* Ensure accent color in dark mode */
+}
+
+/* Style for the preview badge text */
+.jdgm-prev-badge__text {
+    color: rgb(var(--mfg-color-text-base));
+}
+
+html[data-theme="dark"] .jdgm-prev-badge__text {
+    color: rgb(var(--mfg-color-text-base));
+}
+
+/* MFGnerd Judge.me Reviews Widget Custom Styles */
+
+/* Reviews Widget Summary */
+.jdgm-rev-widg__title,
+.jdgm-rev-widg__summary-average,
+.jdgm-rev-widg__summary-text,
+.jdgm-histogram__frequency,
+.jdgm-histogram__clear-filter,
+.jdgm-write-rev-link {
+    color: rgb(var(--mfg-color-text-base));
+}
+
+html[data-theme="dark"] .jdgm-rev-widg__title,
+html[data-theme="dark"] .jdgm-rev-widg__summary-average,
+html[data-theme="dark"] .jdgm-rev-widg__summary-text,
+html[data-theme="dark"] .jdgm-histogram__frequency,
+html[data-theme="dark"] .jdgm-histogram__clear-filter,
+html[data-theme="dark"] .jdgm-write-rev-link {
+    color: rgb(var(--mfg-color-text-base));
+}
+
+/* Star icons in summary and histogram */
+.jdgm-rev-widg__summary-stars .jdgm-star:before,
+.jdgm-histogram__star .jdgm-star:before {
+    color: rgb(var(--mfg-color-accent)); /* Use accent color for filled stars */
+}
+
+/* Verified checkmark icon */
+.jdgm-verified-checkmark {
+    filter: invert(var(--mfg-invert-filter, 0)); /* Use filter to invert color for dark mode if needed */
+}
+
+/* Histogram bar content */
+.jdgm-histogram__bar-content {
+    background-color: rgb(var(--mfg-color-accent)); /* Use accent color for bars */
+}
+
+/* Individual Reviews */
+.jdgm-rev__author,
+.jdgm-rev__timestamp,
+.jdgm-rev__title,
+.jdgm-rev__body p {
+    color: rgb(var(--mfg-color-text-base));
+}
+
+html[data-theme="dark"] .jdgm-rev__author,
+html[data-theme="dark"] .jdgm-rev__timestamp,
+html[data-theme="dark"] .jdgm-rev__title,
+html[data-theme="dark"] .jdgm-rev__body p {
+    color: rgb(var(--mfg-color-text-base));
+}
+
+/* Star icons in individual reviews */
+.jdgm-rev__rating .jdgm-star:before {
+    color: rgb(var(--mfg-color-accent)); /* Use accent color for filled stars */
+}
+
+/* Write a Review Form */
+.jdgm-form__title,
+.jdgm-form__fieldset label,
+.jdgm-form__fieldset p {
+    color: rgb(var(--mfg-color-text-base));
+}
+
+html[data-theme="dark"] .jdgm-form__title,
+html[data-theme="dark"] .jdgm-form__fieldset label,
+html[data-theme="dark"] .jdgm-form__fieldset p {
+    color: rgb(var(--mfg-color-text-base));
+}
+
+.jdgm-form__fieldset input[type="text"],
+.jdgm-form__fieldset input[type="email"],
+.jdgm-form__fieldset textarea,
+.jdgm-sort-dropdown {
+    background-color: rgb(var(--mfg-color-fill));
+    color: rgb(var(--mfg-color-text-base));
+    border: 1px solid rgb(var(--mfg-color-border));
+}
+
+html[data-theme="dark"] .jdgm-form__fieldset input[type="text"],
+html[data-theme="dark"] .jdgm-form__fieldset input[type="email"],
+html[data-theme="dark"] .jdgm-form__fieldset textarea,
+html[data-theme="dark"] .jdgm-sort-dropdown {
+    background-color: rgb(var(--mfg-color-fill));
+    color: rgb(var(--mfg-color-text-base));
+    border-color: rgb(var(--mfg-color-border));
+}
+
+.jdgm-form__fieldset input::placeholder,
+.jdgm-form__fieldset textarea::placeholder {
+    color: rgba(var(--mfg-color-text-base), 0.7); /* Slightly transparent placeholder */
+}
+
+html[data-theme="dark"] .jdgm-form__fieldset input::placeholder,
+html[data-theme="dark"] .jdgm-form__fieldset textarea::placeholder {
+    color: rgba(var(--mfg-color-text-base), 0.7);
+}
+
+.jdgm-form__fieldset p a {
+    color: rgb(var(--mfg-color-accent)); /* Accent color for links in policy text */
+}
+
+html[data-theme="dark"] .jdgm-form__fieldset p a {
+    color: rgb(var(--mfg-color-accent));
+}
+
+/* Form buttons */
+.jdgm-form__fieldset-actions .jdgm-btn {
+    /* Inherit button styles from theme or define here */
+}
+
+.jdgm-form__fieldset-actions .jdgm-btn--border {
+    background-color: transparent;
+    color: rgb(var(--mfg-color-text-base));
+    border-color: rgb(var(--mfg-color-text-base));
+}
+
+html[data-theme="dark"] .jdgm-form__fieldset-actions .jdgm-btn--border {
+    color: rgb(var(--mfg-color-text-base));
+    border-color: rgb(var(--mfg-color-text-base));
+}
+
+.jdgm-form__fieldset-actions .jdgm-btn--solid {
+    background-color: rgb(var(--mfg-color-accent));
+    color: rgb(var(--mfg-color-fill)); /* Use fill color for text on accent background */
+    border-color: rgb(var(--mfg-color-accent));
+}
+
+html[data-theme="dark"] .jdgm-form__fieldset-actions .jdgm-btn--solid {
+    background-color: rgb(var(--mfg-color-accent));
+    color: rgb(var(--mfg-color-text-base)); /* Use text-base color for text on accent background in dark mode */
+    border-color: rgb(var(--mfg-color-accent));
+}
+
+/* Dynamic form styles (if used) - apply similar color rules */
+.jdgm-form-dynamic__title,
+.jdgm-form-dynamic__row-inner label,
+.jdgm-form-dynamic__row-inner input[type="text"],
+.jdgm-form-dynamic__row-inner input[type="email"],
+.jdgm-form-dynamic__row-inner textarea,
+.jdgm-form-dynamic__buttons-row .jdgm-btn {
+     color: rgb(var(--mfg-color-text-base));
+     background-color: rgb(var(--mfg-color-fill));
+     border-color: rgb(var(--mfg-color-border));
+}
+
+html[data-theme="dark"] .jdgm-form-dynamic__title,
+html[data-theme="dark"] .jdgm-form-dynamic__row-inner label,
+html[data-theme="dark"] .jdgm-form-dynamic__row-inner input[type="text"],
+html[data-theme="dark"] .jdgm-form-dynamic__row-inner input[type="email"],
+html[data-theme="dark"] .jdgm-form-dynamic__row-inner textarea,
+html[data-theme="dark"] .jdgm-form-dynamic__buttons-row .jdgm-btn {
+     color: rgb(var(--mfg-color-text-base));
+     background-color: rgb(var(--mfg-color-fill));
+     border-color: rgb(var(--mfg-color-border));
+}
+
+.jdgm-form-dynamic__buttons-row .jdgm-btn--solid {
+    background-color: rgb(var(--mfg-color-accent));
+    color: rgb(var(--mfg-color-fill)); /* Use fill color for text on accent background */
+    border-color: rgb(var(--mfg-color-accent));
+}
+
+html[data-theme="dark"] .jdgm-form-dynamic__buttons-row .jdgm-btn--solid {
+    background-color: rgb(var(--mfg-color-accent));
+    color: rgb(var(--mfg-color-text-base)); /* Use text-base color for text on accent background in dark mode */
+    border-color: rgb(var(--mfg-color-accent));
+}
+
+
+/* End MFGnerd Judge.me Reviews Widget Custom Styles */
+
+/* End MFGnerd Judge.me Carousel Custom Styles */
