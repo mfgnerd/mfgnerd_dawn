@@ -4748,4 +4748,23 @@ html[data-theme="dark"] .jdgm-form-dynamic__buttons-row .jdgm-btn--solid {
 
 /* End MFGnerd Judge.me Reviews Widget Custom Styles */
 
+/* MFGnerd Discount Custom Styles */
+.discounts__discount {
+    color: rgb(var(--mfg-color-text-base));
+}
+
+html[data-theme="dark"] .discounts__discount {
+    color: rgb(var(--mfg-color-text-base));
+}
+
+.discounts__discount svg {
+    fill: rgb(var(--mfg-color-text-base));
+}
+
+html[data-theme="dark"] .discounts__discount svg {
+    fill: rgb(var(--mfg-color-text-base));
+}
+
+/* End MFGnerd Discount Custom Styles */
+
 /* End MFGnerd Judge.me Carousel Custom Styles */
